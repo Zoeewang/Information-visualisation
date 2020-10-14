@@ -14,6 +14,14 @@ map.addControl(
         trackUserLocation: true
     })
 );
+
+map.addControl(
+    new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+    }),
+    'top-left'
+)
+
 var transports = ["bus","tram"];
 var transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn"};
 var transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70"};
