@@ -40,12 +40,14 @@ function addTransportLayer(transport) {
         },
         "paint":{"circle-color":transportColor[transport]}
     })
+
 }
 
 map.on("load", function(){
-    var x;
+    var x;x
     for(x of transports){
         addTransportLayer(x);
+        map.setLayoutProperty(x, 'visibility','none');
     }
 });
 
@@ -59,7 +61,7 @@ for (var i = 0; i < transports.length; i++) {
     link.href = '#';
     link.className = 'active';
     link.textContent = id;
-
+    console.log(link.textContent);
     link.onclick = function (e) {
         var clickedLayer = this.textContent;
         e.preventDefault();
@@ -79,4 +81,5 @@ for (var i = 0; i < transports.length; i++) {
 
     var layers = document.getElementById('menu');
     layers.appendChild(link);
+    link.className = '';
 }
