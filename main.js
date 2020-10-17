@@ -46,7 +46,22 @@ map.on("load", function(){
     for(x of transports){
         addTransportLayer(x);
         map.setLayoutProperty(x, 'visibility','none');
+
+        var color = transportColor[x];
+        let item = document.createElement('div');
+        let key = document.createElement('span');
+        key.className = 'legend-key';
+        key.style.backgroundColor = color;
+        let value = document.createElement('span');
+        value.innerHTML = x;
+        item.appendChild(key);
+        item.appendChild(value);
+        legend.appendChild(item);
+
     }
+
+    map.addControl(new mapboxgl.NavigationControl());
+
 });
 
 
