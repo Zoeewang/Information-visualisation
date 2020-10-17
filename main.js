@@ -22,14 +22,12 @@ map.addControl(
     'top-left'
 )
 
+//add map layer information, includes the name, id of tge map tilesets from mapbox studio and the color that the dots in the map
 var transports = ["bus","tram"];
 var transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn"};
 var transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70"};
 var transportColor = {"bus": "#de8282", "tram":"#668cff"};
 function addTransportLayer(transport) {
-    // console.log(transport);
-    // console.log(transportName[transport]);
-    // console.log(transportLyaers.transport);
     map.addLayer({
         id: transport,
         type: 'circle',
@@ -44,7 +42,7 @@ function addTransportLayer(transport) {
 }
 
 map.on("load", function(){
-    var x;x
+    var x;
     for(x of transports){
         addTransportLayer(x);
         map.setLayoutProperty(x, 'visibility','none');
@@ -53,33 +51,89 @@ map.on("load", function(){
 
 
 
+map.on('mousemove', function(e) {
+    // Change the icon to a pointer icon when you mouse over a building
+    mouseMove(transports);
+});
+
+mouseClick(transports);
+
+function mouseMove(layers){
+    var layer;
+    for(layer of layers){
+        map.on('mouseenter', layer, function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pan icon when it leaves.
+        map.on('mouseleave', layer, function() {
+            map.getCanvas().style.cursor = '';
+        });
+    }
+}
+
+function mouseClick(layers){
+    var layer;
+    for(layer of layers){
+        map.on('click', layer, function(e){
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML('Stop: ' + e.features[0].properties.STOP_ID + '<br>' + e.features[0].properties.STOP_NAME)
+                .addTo(map);
+        });
+    }
+}
+
+//creating the buttons to control the visibility of the each map layer
+setCorrespondingButton(transports, 'menu');
 // set up the corresponding toggle button for each layer
-for (var i = 0; i < transports.length; i++) {
-    var id = transports[i];
+function setCorrespondingButton(transports, menu){
+    for (var i = 0; i < transports.length; i++) {
+        var id = transports[i];
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.textContent = id;
+        console.log(link.textContent);
+        link.onclick = function (e) {
+            var clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
 
-    var link = document.createElement('a');
-    link.href = '#';
-    link.className = 'active';
-    link.textContent = id;
-    console.log(link.textContent);
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
 
 // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-            this.className = '';
-        } else {
-            this.className = 'active';
-            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-        }
-    };
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
 
-    var layers = document.getElementById('menu');
-    layers.appendChild(link);
-    link.className = '';
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+        link.className = '';
+    }
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function transportButtons(){
+    document.getElementById('menu').classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }

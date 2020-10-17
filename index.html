@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <nav id="menu"></nav>
-    <div id='map'></div>
-    <!--div id="checkboxes">
-        <label class="container">Tram
-            <input type="checkbox" name="checktram">
-            <span class="checkmark"></span>
-        </label>
 
-        <label class="container">Bus
-            <input type="checkbox" name="checkbus">
-            <span class="checkmark"></span>
-        </label>
-    </div-->
+    <!--<nav id="menu"></nav>-->
+    <div id="container">
+        <div id='map'></div>
+        <div class="buttons">
+            <ul>
+                <li><button onclick="transportButtons()" class="dropbtn">Transports</button></li>
+                <li><button onclick="" class="dropbtn">Land of Marks</button></li>
+                <li><button onclick="" class="dropbtn">Social Lives</button></li>
+            </ul>
+            <div id="menu" class="dropdown-content"></div>
+        </div>
+        <div id="information">Information</div>
+    </div>
+
 </body>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
