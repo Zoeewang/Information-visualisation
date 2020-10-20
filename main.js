@@ -23,10 +23,11 @@ map.addControl(
 )
 
 //add map layer information, includes the name, id of tge map tilesets from mapbox studio and the color that the dots in the map
-var transports = ["bus","tram"];
-var transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn"};
-var transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70"};
-var transportColor = {"bus": "#de8282", "tram":"#668cff"};
+let transports = ["bus","tram","train","sky bus","night bus"];
+
+let transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn","train":"zwwang4.5zoco9pq","sky bus":"zwwang4.bkxr7mi6","night bus":"zwwang4.9karz3fu"};
+let transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70","train":"train_station-1i70n4","sky bus":"sky_bus_stop-7qf27q","night bus":"night_bus_stop-asvh8x"};
+let transportColor = {"bus": "#de8282", "tram":"#668cff","train":"#ffcc00","sky bus":"#66ff33","night bus":"#ff6600"};
 function addTransportLayer(transport) {
     map.addLayer({
         id: transport,
@@ -46,10 +47,10 @@ map.on("load", function(){
     for(x of transports){
         addTransportLayer(x);
         map.setLayoutProperty(x, 'visibility','none');
-
-        var color = transportColor[x];
+        let color = transportColor[x];
         let item = document.createElement('div');
         let key = document.createElement('span');
+        let legend = document.getElementById("legend");
         key.className = 'legend-key';
         key.style.backgroundColor = color;
         let value = document.createElement('span');
@@ -127,7 +128,7 @@ function setCorrespondingButton(transports, menu){
             }
         };
 
-        var layers = document.getElementById('menu');
+        var layers = document.getElementById(menu);
         layers.appendChild(link);
         link.className = '';
     }
