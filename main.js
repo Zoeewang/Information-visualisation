@@ -28,6 +28,9 @@ let transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn","trai
 let transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70","train":"train_station-1i70n4","sky bus":"sky_bus_stop-7qf27q","night bus":"night_bus_stop-asvh8x"};
 let transportColor = {"bus": "#de8282", "tram":"#668cff","train":"#ffcc00","sky bus":"#66ff33","night bus":"#ff6600"};
 
+let transport_route_Layers = {"bus":"zwwang4.2kz6w0iq","tram":"zwwang4.44idhdrf","train":"zwwang4.bis7pf0r","sky bus":"zwwang4.3urevqi7", "night bus":"zwwang4.4bjkmit2"}
+let transport_route_Name = {"bus":"bus_route-ae5rku","tram":"tram_route-a6u7q2", "train":"train_route-1dlqlx", "sky bus":"skybus_route-0tepci", "night bus":"night_bus_route-7e9883"}
+
 let place_of_interest = ["cafe/restaurant", "free and cheap support service","Land Marks and place of interest", "Public memorials and sculptures"];
 let poiLayers = {"cafe/restaurant":"zwwang4.8ikyb6d5", "free and cheap support service":"zwwang4.5ylprpgw",
     "Land Marks and place of interest":"zwwang4.aqh2rqg0", "Public memorials and sculptures":"zwwang4.9967w9b4"};
@@ -61,6 +64,22 @@ function addLayer(transport,transport_layer, transport_name,transport_color) {
     })
 }
 
+
+function addLayerWithZoom(transport,transport_layer, transport_name,transport_color,zoom) {
+    map.addLayer({
+        id: transport,
+        type: "circle",
+        minzoom: zoom,
+        'source-layer': transport_name,
+        source:{
+            type: 'vector',
+            url:("mapbox://")+transport_layer
+        },
+        "paint":{"circle-color":transport_color}
+    })
+}
+
+
 function addFillLayer(name, layer, layer_name, layer_color){
     map.addLayer({
         id: name,
@@ -74,11 +93,27 @@ function addFillLayer(name, layer, layer_name, layer_color){
     })
 }
 
+function addLineLayer(layer, layer_name, layer_color){
+    map.addLayer({
+        id: layer_name,
+        type: "line",
+        'source-layer': layer_name,
+        source:{
+            type: 'vector',
+            url:("mapbox://")+layer
+        },
+        "paint":{"line-color":layer_color}
+    })
+    console.log(layer_name+" added");
+}
+
 map.on("load", function(){
     var x;
     for(x of transports){
-        addLayer(x,transportLyaers[x], transportName[x], transportColor[x]);
+        addLayerWithZoom(x,transportLyaers[x], transportName[x], transportColor[x],13);
+        addLineLayer(transport_route_Layers[x],transport_route_Name[x], transportColor[x]);
         map.setLayoutProperty(x, 'visibility','none');
+        map.setLayoutProperty(transport_route_Name[x], "visibility","none");
         let color = transportColor[x];
         let item = document.createElement('div');
         let key = document.createElement('span');
@@ -147,12 +182,44 @@ function mouseClick(layers){
 }
 
 //creating the buttons to control the visibility of the each map layer
-setCorrespondingButton(transports, 'menu');
+setCorrespondingTransportButton(transports, 'menu');
 setCorrespondingButton(place_of_interest, "poi_menu");
 setCorrespondingButton(convenience_facilities, "cf_menu");
 setCorrespondingButton(special_areas, "sa_menu")
 // set up the corresponding toggle button for each layer
 function setCorrespondingButton(transports, menu){
+    for (var i = 0; i < transports.length; i++) {
+        var id = transports[i];
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.textContent = id;
+        // console.log(link.textContent);
+        link.onclick = function (e) {
+            var clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+// toggle layer visibility by changing the layout object's visibility property
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
+
+        var layers = document.getElementById(menu);
+        layers.appendChild(link);
+        link.className = '';
+    }
+}
+
+
+function setCorrespondingTransportButton(transports, menu){
     for (var i = 0; i < transports.length; i++) {
         var id = transports[i];
         var link = document.createElement('a');
@@ -170,10 +237,12 @@ function setCorrespondingButton(transports, menu){
 // toggle layer visibility by changing the layout object's visibility property
             if (visibility === 'visible') {
                 map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                map.setLayoutProperty(transport_route_Name[clickedLayer],"visibility","none");
                 this.className = '';
             } else {
                 this.className = 'active';
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                map.setLayoutProperty(transport_route_Name[clickedLayer],"visibility","visible");
             }
         };
 
