@@ -11,6 +11,7 @@
             type="text/css"
     />
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mustgo.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                     Scenarios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="compareMap()">Melbourne Mood</a>
+                    <a class="dropdown-item" onclick="startMap()">Melbourne Mood</a>
                     <a class="dropdown-item" onclick="auspolMap()">#auspol</a>
                 </div>
             </li>
@@ -97,7 +98,9 @@
             <div id="cf_menu" class="dropdown-content"></div>
             <div id="sa_menu" class="dropdown-content"></div>
         </div>
-        <div id="information">Information</div>
+        <div id="information">
+            <h2>Information</h2>
+        </div>
     </div>
 
 </body>
@@ -107,5 +110,6 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src='main.js'></script>
+    <script src='mustgo.js'></script>
 
 </html>
