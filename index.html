@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="mustgo.css">
 </head>
 
-<body>
+<body onload="startMap()">
 <!--navbar-->
 <div class = "nav-team32">
     <nav class="navbar navbar-light bg-light border-bottom">
         <ul class = "brandname" style="font-family: 'Roboto', sans-serif; font-weight:900;">Information Visualisation</ul>
         <ul class="nav-area">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="initMap()">
                     Transport
                 </a>
                 <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
@@ -61,10 +61,16 @@
     <div id="container">
         <div id='map'></div>
         <div class="map-overlay" id="legend"></div>
-        <div id="information">Information</div>
+        <div id="information">
+            <h2>Information</h2>
+            <div id="chart">
+            <canvas id="myChart" width="1000" height="450"></canvas>
+            </div>
+        </div>
     </div>
 
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

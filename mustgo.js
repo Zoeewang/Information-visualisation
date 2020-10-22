@@ -1,7 +1,7 @@
 function startMap() {
     // this.visible=true
     mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2Z5eXF5ZmIwN2d3MnlvMWthNXV0eDY1In0.N-0Dr177HFqwX9_VxWsy_g';
-    var map = new mapboxgl.Map({
+    var gomap = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
@@ -28,7 +28,10 @@ function startMap() {
 
 // create the popup
     var shrine_popup = new mapboxgl.Popup({ offset: 25 })
-        .setHTML('<h5>Shrine of Remembrance</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>'+'<img src="./image/Shrine_of_Rememberance.png" style="width:200px;height:100px;">')
+        .setHTML('<h5>Shrine of Remembrance</h5>'+
+            '<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>'+
+            '<img src="./image/Shrine_of_Rememberance.png" style="width:200px;height:100px;">'
+    +'<canvas id="myChart" width="20" height="20"></canvas>')
     ;
 
     var arts_popup = new mapboxgl.Popup({ offset: 25 })
@@ -146,77 +149,77 @@ function startMap() {
     new mapboxgl.Marker(el)
         .setLngLat(shrine_loc)
         .setPopup(shrine_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(arts)
         .setLngLat(arts_loc)
         .setPopup(arts_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(etihad)
         .setLngLat(etihad_loc)
         .setPopup(etihad_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(eureka)
         .setLngLat(eureka_loc)
         .setPopup(eureka_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(fed)
         .setLngLat(fed_loc)
         .setPopup(fed_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(flind)
         .setLngLat(flind_loc)
         .setPopup(flind_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(immi)
         .setLngLat(immi_loc)
         .setPopup(immi_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(dock)
         .setLngLat(dock_loc)
         .setPopup(dock_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(museum)
         .setLngLat(museum_loc)
         .setPopup(museum_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(convention)
         .setLngLat(convention_loc)
         .setPopup(convention_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(star)
         .setLngLat(star_loc)
         .setPopup(star_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(royal)
         .setLngLat(royal_loc)
         .setPopup(royal_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(southern)
         .setLngLat(southern_loc)
         .setPopup(southern_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(state)
         .setLngLat(state_loc)
         .setPopup(state_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
 
     new mapboxgl.Marker(parli)
         .setLngLat(parli_loc)
         .setPopup(parli_popup) // sets a popup on this marker
-        .addTo(map);
+        .addTo(gomap);
     //
     // new mapboxgl.Marker(royal)
     //     .setLngLat(royal_lo)
@@ -239,4 +242,52 @@ function startMap() {
     //         para.style.display = 'block';
     //     }
     // });
+    el.addEventListener('click', function(e){
+        var ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                datasets: [
+                    {
+                        label: "Population (millions)",
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                        data: [2478,5267,734,784,433]
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Predicted world population (millions) in 2050'
+                }
+            }
+        });
+    });
+
+    state.addEventListener('click', function(e){
+        var ctx = document.getElementById('myChart');
+        console.log("keyi")
+        new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: ["haha", "Asia", "Europe", "Latin America", "North America"],
+                datasets: [
+                    {
+                        label: "Population (millions)",
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                        data: [2478,5267,734,784,433]
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Predicted world population (millions) in 2050'
+                }
+            }
+        });
+    });
 }
