@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Title</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
@@ -10,33 +11,77 @@
             type="text/css"
     />
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mustgo.css">
 </head>
-<body>
 
-    <!--<nav id="menu"></nav>-->
-    <div id="container">
-        <div id='map'>
+<body onload="startMap()">
+<!--navbar-->
+<div class = "nav-team32">
+    <nav class="navbar navbar-light bg-light border-bottom">
+        <ul class = "brandname" style="font-family: 'Roboto', sans-serif; font-weight:900;">Information Visualisation</ul>
+        <ul class="nav-area">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="initMap()">
+                    Transport
+                </a>
+                <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    Land of marks
+                </a>
 
-        </div>
+
+                <div id="poi_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" onclick="startMap()">Melbourne Mood</a>
+                </div>
+            </li>
+            <!--            twitter-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Social Lives
+                </a>
+                <div id="cf_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                </div>
+            </li>
+            <!--            aurin-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Playground & Special Area
+                </a>
+                <div id="sa_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<!--    <div id="container">-->
+        <div id='map'></div>
         <div class="map-overlay" id="legend"></div>
+<!--        <div id="information">-->
+<!--            <h2>Information</h2>-->
+<!--            <div id="chart">-->
 
-        <div class="buttons">
-            <ul>
-                <li><button onclick="transportButtons()" class="dropbtn">Transports</button></li>
-                <li><button onclick="poi_Buttons()" class="dropbtn">Land of Marks</button></li>
-                <li><button onclick="cf_Buttons()" class="dropbtn">Social Lives</button></li>
-                <li><button onclick="sa_Buttons()" class="dropbtn">Playground & Special areas</button></li>
-            </ul>
-            <div id="menu" class="dropdown-content"></div>
-            <div id="poi_menu" class="dropdown-content"></div>
-            <div id="cf_menu" class="dropdown-content"></div>
-            <div id="sa_menu" class="dropdown-content"></div>
-        </div>
-        <div id="information">Information</div>
-    </div>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<div class="fixedContainer">
+    <h4>Information</h4>
+    <canvas id="myChart" width="200" height="300"></canvas>
+</div>
 
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src='main.js'></script>
+    <script src='mustgo.js'></script>
+
 </html>
