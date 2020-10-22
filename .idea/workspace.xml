@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="navbar">
-      <change afterPath="$PROJECT_DIR$/image/Shrine_of_Rememberance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mustgo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mustgo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="must go" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +92,7 @@
       <workItem from="1603098186408" duration="2824000" />
       <workItem from="1603186788885" duration="6470000" />
       <workItem from="1603250136593" duration="8354000" />
-      <workItem from="1603339677420" duration="8725000" />
+      <workItem from="1603339677420" duration="8991000" />
     </task>
     <task id="LOCAL-00001" summary="navbar">
       <created>1603342644297</created>
@@ -108,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603342644297</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="must go">
+      <created>1603351155155</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603351155155</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -152,6 +152,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="navbar" />
+    <MESSAGE value="must go" />
+    <option name="LAST_COMMIT_MESSAGE" value="must go" />
   </component>
 </project>

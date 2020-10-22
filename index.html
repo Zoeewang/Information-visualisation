@@ -18,89 +18,50 @@
 <!--navbar-->
 <div class = "nav-team32">
     <nav class="navbar navbar-light bg-light border-bottom">
-        <!--            <a class="navbar-brand" href="#">-->
-        <!--                <img src="../static/image/logo.png" width="70" height="70" >-->
-
-        <!--            </a>-->
         <ul class = "brandname" style="font-family: 'Roboto', sans-serif; font-weight:900;">Information Visualisation</ul>
-
-
-
         <ul class="nav-area">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                    Monitoring
+                    Transport
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="http://45.113.234.69:3000/d/jkbI2ZzGz/docker-monitoring?orgId=1&refresh=10s" target="_blank">instance 1</a>
-                    <a class="dropdown-item" href="http://115.146.94.169:3000/d/193/docker-monitoring?orgId=1&refresh=10s" target="_blank">instance 2</a>
-                    <a class="dropdown-item" href="http://115.146.93.145:3000/d/193/docker-monitoring?orgId=1&refresh=10s" target="_blank">instance 3</a>
-
-                </div>
+                <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#007bff">
-                    Scenarios
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    Land of marks
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                <div id="poi_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" onclick="startMap()">Melbourne Mood</a>
-                    <a class="dropdown-item" onclick="auspolMap()">#auspol</a>
                 </div>
             </li>
             <!--            twitter-->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #007bff">
-                    Twitter Map
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Social Lives
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="initMap(sentiment_crawl,hashtag_crawl)" > Crawled Tweets</a>
-                    <a class="dropdown-item" onclick="initMap(sentiment_2014,hashtag_2014)">Old Tweets: 2014</a>
-                    <a class="dropdown-item" onclick="initMap(sentiment_2015,hashtag_2015)">Old Tweets: 2015</a>
-                    <a class="dropdown-item" onclick="initMap(sentiment_2016,hashtag_2016)">Old Tweets: 2016</a>
-                    <a class="dropdown-item" onclick="initMap(sentiment_2017,hashtag_2017)">Old Tweets: 2017</a>
-                    <a class="dropdown-item" onclick="initMap(sentiment_2018,hashtag_2018)">Old Tweets: 2018</a>
+                <div id="cf_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </div>
             </li>
             <!--            aurin-->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#007bff">
-                    Aurin Map
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Playground & Special Area
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="incomeMap(['economy_index',1])">Economy</a>
-                    <a class="dropdown-item" onclick="incomeMap(['health_index',2])">Health</a>
+                <div id="sa_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </div>
             </li>
-
-
-
-            <li><a href="../chart">Chart</a></li>
-            <li><a href="../" >Home</a></li>
         </ul>
     </nav>
 </div>
-    <!--<nav id="menu"></nav>-->
+
+
+
     <div id="container">
-        <div id='map'>
-
-        </div>
+        <div id='map'></div>
         <div class="map-overlay" id="legend"></div>
-
-        <div class="buttons">
-            <ul>
-                <li><button onclick="transportButtons()" class="dropbtn">Transports</button></li>
-                <li><button onclick="poi_Buttons()" class="dropbtn">Land of Marks</button></li>
-                <li><button onclick="cf_Buttons()" class="dropbtn">Social Lives</button></li>
-                <li><button onclick="sa_Buttons()" class="dropbtn">Playground & Special areas</button></li>
-            </ul>
-            <div id="menu" class="dropdown-content"></div>
-            <div id="poi_menu" class="dropdown-content"></div>
-            <div id="cf_menu" class="dropdown-content"></div>
-            <div id="sa_menu" class="dropdown-content"></div>
-        </div>
-        <div id="information">
-            <h2>Information</h2>
-        </div>
+        <div id="information">Information</div>
     </div>
 
 </body>

@@ -23,12 +23,12 @@ body { margin: 0; padding: 0; }
 #container{
     display: grid;
     grid-template:
-    "map map map map map buttons"
+    "map map map map map information"
     "map map map map map information"
     "map map map map map information";
-    grid-gap: 5px;
-    background-color: #000000;
-    padding: 5px;
+    grid-gap: 0px;
+    background-color: #ffffff;
+    padding: 0px;
 }
 
 #container > div{
@@ -52,47 +52,6 @@ body { margin: 0; padding: 0; }
     user-select: none;
 }
 
-.dropdown-content {
-    background: #fff;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    right: 10px;
-    border-radius: 3px;
-    width: 120px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    font-family: 'Open Sans', sans-serif;
-    display: none;
-}
-
-.dropdown-content a {
-    font-size: 13px;
-    color: #404040;
-    margin: 0;
-    padding: 10px;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    text-align: center;
-    display: block;
-}
-
-.dropdown-content a:last-child {
-    border: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #f8f8f8;
-    color: #404040;
-}
-
-.dropdown-content a.active {
-    background-color: #3887be;
-    color: #ffffff;
-}
-
-.dropdown-content a.active:hover {
-    background: #3074a4;
-}
 
 .dropbtn {
     background-color: #3498DB;
@@ -214,11 +173,61 @@ body { margin: 0; padding: 0; }
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
 
+
+    margin: 0;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.25);*/
+    text-align: center;
+    display: block;
 }
 
 .nav-area li a:hover{
     /*background: #abbfe2;*/
     color: #007bff;
+}
 
+.nav-area li a.active{
+    color: #007bff;
+}
+
+.dropdown-content {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    border-radius: 3px;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-family: 'Open Sans', sans-serif;
+    display: none;
+}
+
+.dropdown-content a {
+    font-size: 13px;
+    color: #404040;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+    display: block;
+}
+
+.dropdown-content a:last-child {
+    border: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+}
+
+.dropdown-content a.active {
+    background-color: #3887be;
+    color: #ffffff;
+}
+
+.dropdown-content a.active:hover {
+    background: #3074a4;
 }
 
