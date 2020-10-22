@@ -117,15 +117,15 @@ function startMap() {
 
     var convention = document.createElement('div');
     convention.className = 'marker';
-    convention.id = 'fed';
+    convention.id = 'convention';
 
     var museum = document.createElement('div');
     museum.className = 'marker';
-    museum.id = 'fed';
+    museum.id = 'museum';
 
     var star = document.createElement('div');
     star.className = 'marker';
-    star.id = 'fed';
+    star.id = 'star';
 
     var royal = document.createElement('div');
     royal.className = 'marker';

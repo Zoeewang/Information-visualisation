@@ -22,6 +22,7 @@
     <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="must go">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mustgo.css" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mustgo.js" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.js" afterDir="false" />
@@ -94,7 +95,7 @@
       <workItem from="1603186788885" duration="6470000" />
       <workItem from="1603250136593" duration="8354000" />
       <workItem from="1603339677420" duration="12766000" />
-      <workItem from="1603356048579" duration="3478000" />
+      <workItem from="1603356048579" duration="6397000" />
     </task>
     <task id="LOCAL-00001" summary="navbar">
       <created>1603342644297</created>
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603351155155</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="must go">
+      <created>1603367602757</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603367602757</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">

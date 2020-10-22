@@ -138,3 +138,14 @@
     height:800px;
     margin-right:0;
 }
+
+.fixedContainer {
+    background-color:#f2f0ef;
+    position: fixed;
+    padding: 2em;
+    right: 2%;
+    top: 57px;
+    border: 5px solid #7aacc7;
+    border-radius: 10px;
+    /* transform: translateX(-50%); */
+}
