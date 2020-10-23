@@ -14,7 +14,6 @@ function startMap() {
     var eureka_loc = {lat: -37.821067, lng:144.964725}
     var fed_loc = {lat: -37.817891, lng:144.969045}
     var flind_loc = {lat: -37.818402, lng:144.967233}
-
     var immi_loc = {lat: -37.819092, lng:144.960433}
     var dock_loc = {lat: -37.819752, lng:144.940899}
     var convention_loc = {lat: -37.825985, lng:144.953118}
@@ -24,6 +23,10 @@ function startMap() {
     var southern_loc = {lat: -37.818228, lng:144.952539}
     var state_loc = {lat: -37.809537, lng:144.965190}
     var parli_loc = {lat: -37.810852, lng:144.973757}
+    var sea_loc = {lat: -37.820466, lng:144.958201}
+    var ngv_loc = {lat: -37.822387, lng:144.968874}
+    var st_loc  = {lat: -37.821311, lng:144.979173}
+    var old_loc = {lat: -37.813006, lng:144.974472}
 
 
 // create the popup
@@ -79,6 +82,21 @@ function startMap() {
     var parli_popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML('<h5>Shrine of Remembrance</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>')
     ;
+    var sea_popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<h5>sea</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>')
+    ;
+    var ngv_popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<h5>ngv</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>')
+    ;
+
+    var st_popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<h5>St</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>')
+    ;
+
+    var old_popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<h5>old</h5>'+'<p>Visit the Shrine of Remembrance, Melbourne\'s most iconic landmark, where Victorians have been coming since 1934 to honour the service and sacrifice of Australian men and women in war and peacekeeping. </p>')
+    ;
+
 
 
 
@@ -142,6 +160,22 @@ function startMap() {
     var parli = document.createElement('div');
     parli.className = 'marker';
     parli.id = 'parli';
+
+    var sea = document.createElement('div');
+    sea.className = 'marker';
+    sea.id = 'sea';
+
+    var st = document.createElement('div');
+    st.className = 'marker';
+    st.id = 'st';
+
+    var ngv = document.createElement('div');
+    ngv.className = 'marker';
+    ngv.id = 'ngv';
+
+    var old = document.createElement('div');
+    old.className = 'marker';
+    old.id = 'old';
 
 
 
@@ -220,6 +254,26 @@ function startMap() {
         .setLngLat(parli_loc)
         .setPopup(parli_popup) // sets a popup on this marker
         .addTo(gomap);
+
+    new mapboxgl.Marker(sea)
+        .setLngLat(sea_loc)
+        .setPopup(sea_popup) // sets a popup on this marker
+        .addTo(gomap);
+
+    new mapboxgl.Marker(st)
+        .setLngLat(st_loc)
+        .setPopup(st_popup) // sets a popup on this marker
+        .addTo(gomap);
+
+    new mapboxgl.Marker(old)
+        .setLngLat(old_loc)
+        .setPopup(old_popup) // sets a popup on this marker
+        .addTo(gomap);
+
+    new mapboxgl.Marker(ngv)
+        .setLngLat(ngv_loc)
+        .setPopup(ngv_popup) // sets a popup on this marker
+        .addTo(gomap);
     //
     // new mapboxgl.Marker(royal)
     //     .setLngLat(royal_lo)
@@ -242,9 +296,12 @@ function startMap() {
     //         para.style.display = 'block';
     //     }
     // });
+
+
     el.addEventListener('click', function(e){
-        var ctx = document.getElementById('myChart');
-        new Chart(ctx, {
+        var ctx = document.getElementById('myChart').getContext("2d");
+        if (window.haChart != null) window.haChart.destroy();
+        window.haChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
                 labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
@@ -264,12 +321,15 @@ function startMap() {
                 }
             }
         });
+
     });
 
     state.addEventListener('click', function(e){
-        var ctx = document.getElementById('myChart');
-        console.log("keyi")
-        new Chart(ctx, {
+        console.log("good");
+        if (window.haChart != null) window.haChart.destroy();
+
+        var ctx = document.getElementById('myChart').getContext("2d");
+        haChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
                 labels: ["haha", "Asia", "Europe", "Latin America", "North America"],
@@ -288,6 +348,8 @@ function startMap() {
                     text: 'Predicted world population (millions) in 2050'
                 }
             }
+
         });
+
     });
 }
