@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="information window">
-      <change afterPath="$PROJECT_DIR$/icon/NGV Melbourne.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Arts Centre Melbourne.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Eureka Tower SkyDeck.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Federation Square.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Immigration Museum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Library at the Dock.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Marvel Studium.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Melbourne Museum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Melbourne Star Observation Wheel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Melbourne-Conventions-Exhbition-Centre.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/NGV Melbourne.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Old Treasury Building.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Queen Victoria Market.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/SEA LIFE Melbourne Aquarium.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/Southern Cross Station.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/St Paul's Cathedral.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/State Library of Victoria.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/description.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/flinders street station.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/parliament house.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/royal-exhibition-building.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon/St Pual's Cathedral.png" beforeDir="false" afterPath="$PROJECT_DIR$/icon/St Puals Cathedral.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustgo.css" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustgo.js" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +93,7 @@
       <workItem from="1603186788885" duration="6470000" />
       <workItem from="1603250136593" duration="8354000" />
       <workItem from="1603339677420" duration="12766000" />
-      <workItem from="1603356048579" duration="10634000" />
+      <workItem from="1603356048579" duration="10945000" />
     </task>
     <task id="LOCAL-00001" summary="navbar">
       <created>1603342644297</created>
@@ -147,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603375826165</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="information window">
+      <created>1603415669954</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603415669954</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
