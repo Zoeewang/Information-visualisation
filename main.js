@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2Z5eXF5ZmIwN2d3MnlvMWthNXV0eDY1In0.N-0Dr177HFqwX9_VxWsy_g';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/zwwang4/ckg4vdgns0gb819tl89k5etnj', // stylesheet location
+    style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
     center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
     zoom: 13 // starting zoom
 });
@@ -22,7 +22,7 @@ map.addControl(
     'top-left'
 )
 
-//add map layer information, includes the name, id of tge map tilesets from mapbox studio and the color that the dots in the map
+// add map layer information, includes the name, id of tge map tilesets from mapbox studio and the color that the dots in the map
 let transports = ["bus","tram","train","sky bus","night bus"];
 let transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn","train":"zwwang4.5zoco9pq","sky bus":"zwwang4.bkxr7mi6","night bus":"zwwang4.9karz3fu"};
 let transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70","train":"train_station-1i70n4","sky bus":"sky_bus_stop-7qf27q","night bus":"night_bus_stop-asvh8x"};
@@ -109,23 +109,23 @@ function addLineLayer(layer, layer_name, layer_color){
 
 map.on("load", function(){
     var x;
-    for(x of transports){
-        addLayerWithZoom(x,transportLyaers[x], transportName[x], transportColor[x],13);
-        addLineLayer(transport_route_Layers[x],transport_route_Name[x], transportColor[x]);
-        map.setLayoutProperty(x, 'visibility','none');
-        map.setLayoutProperty(transport_route_Name[x], "visibility","none");
-        let color = transportColor[x];
-        let item = document.createElement('div');
-        let key = document.createElement('span');
-        let legend = document.getElementById("legend");
-        key.className = 'legend-key';
-        key.style.backgroundColor = color;
-        let value = document.createElement('span');
-        value.innerHTML = x;
-        item.appendChild(key);
-        item.appendChild(value);
-        legend.appendChild(item);
-    }
+    // for(x of transports){
+    //     addLayerWithZoom(x,transportLyaers[x], transportName[x], transportColor[x],13);
+    //     addLineLayer(transport_route_Layers[x],transport_route_Name[x], transportColor[x]);
+    //     map.setLayoutProperty(x, 'visibility','none');
+    //     map.setLayoutProperty(transport_route_Name[x], "visibility","none");
+    //     let color = transportColor[x];
+    //     let item = document.createElement('div');
+    //     let key = document.createElement('span');
+    //     let legend = document.getElementById("legend");
+    //     key.className = 'legend-key';
+    //     key.style.backgroundColor = color;
+    //     let value = document.createElement('span');
+    //     value.innerHTML = x;
+    //     item.appendChild(key);
+    //     item.appendChild(value);
+    //     legend.appendChild(item);
+    // }
 
     for(x of place_of_interest){
         addLayer(x, poiLayers[x],poiName[x],poiColor[x]);
@@ -148,12 +148,12 @@ map.on("load", function(){
 
 
 
-map.on('mousemove', function(e) {
-    // Change the icon to a pointer icon when you mouse over a building
-    mouseMove(transports);
-});
-
-mouseClick(transports);
+// map.on('mousemove', function(e) {
+//     // Change the icon to a pointer icon when you mouse over a building
+//     mouseMove(transports);
+// });
+//
+// mouseClick(transports);
 
 function mouseMove(layers){
     var layer;
@@ -182,7 +182,6 @@ function mouseClick(layers){
 }
 
 //creating the buttons to control the visibility of the each map layer
-setCorrespondingTransportButton(transports, 'menu');
 setCorrespondingButton(place_of_interest, "poi_menu");
 setCorrespondingButton(convenience_facilities, "cf_menu");
 setCorrespondingButton(special_areas, "sa_menu")
@@ -220,6 +219,10 @@ function setCorrespondingButton(transports, menu){
 
 
 function setCorrespondingTransportButton(transports, menu){
+    const layers = document.getElementById(menu);
+    while(layers.firstChild){
+        layers.removeChild(layers.firstChild);
+    }
     for (var i = 0; i < transports.length; i++) {
         var id = transports[i];
         var link = document.createElement('a');
@@ -246,7 +249,6 @@ function setCorrespondingTransportButton(transports, menu){
             }
         };
 
-        var layers = document.getElementById(menu);
         layers.appendChild(link);
         link.className = '';
     }
