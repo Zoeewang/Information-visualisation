@@ -14,28 +14,34 @@
     <link rel="stylesheet" href="mustgo.css">
 </head>
 
-<!--<body onload="startMap()">-->
+<body onload="startMap()">
 <!--navbar-->
 <div class = "nav-team32">
     <nav class="navbar navbar-light bg-light border-bottom">
         <ul class = "brandname" style="font-family: 'Roboto', sans-serif; font-weight:900;">Information Visualisation</ul>
         <ul class="nav-area">
+<!--            <li class="nav-link"  type="button" onclick="startMap()" style="font-size: 18px; color: #707074;">20 Must GO</li>-->
+            <li class="nav-item">
+                <a class="nav-link" type="button" onclick="startMap()"><span>20 Must go</span></a>
+            </li>
             <li class="nav-item dropdown">
+
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="OpenTransportLayers()">
                     Transport
                 </a>
                 <div id="menu" class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                    Land of marks
-                </a>
+
+<!--            <li class="nav-item dropdown">-->
+<!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"  aria-haspopup="true" aria-expanded="false" >-->
+<!--                    Land of marks-->
+<!--                </a>-->
 
 
-                <div id="poi_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" onclick="startMap()">Must GO</a>
-                </div>
-            </li>
+<!--                <div id="poi_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                    <a class="dropdown-item" onclick="startMap()">20 Must GO</a>-->
+<!--                </div>-->
+<!--            </li>-->
             <!--            twitter-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
