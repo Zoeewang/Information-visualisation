@@ -180,11 +180,11 @@
 
 .fixedContainer {
     background-color:rgba(242, 240, 239, 0.5);
-    top: 300px;
+
     position: fixed;
     padding: 2em;
     right: 2%;
-    top: 8%;
+    top: 10%;
     border: 5px solid #7aacc7;
     border-radius: 10px;
     /* transform: translateX(-50%); */
