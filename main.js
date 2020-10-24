@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
     center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
     zoom: 13 // starting zoom
 });
-
+//
 map.addControl(
     new mapboxgl.GeolocateControl({
         positionOptions: {
@@ -14,13 +14,13 @@ map.addControl(
         trackUserLocation: true
     })
 );
-
-map.addControl(
-    new MapboxDirections({
-        accessToken: mapboxgl.accessToken
-    }),
-    'top-left'
-)
+//
+// map.addControl(
+//     new MapboxDirections({
+//         accessToken: mapboxgl.accessToken
+//     }),
+//     'top-left'
+// )
 
 // add map layer information, includes the name, id of tge map tilesets from mapbox studio and the color that the dots in the map
 let transports = ["bus","tram","train","sky bus","night bus"];
@@ -51,7 +51,7 @@ let special_areas_Layer = {"Playground":"zwwang4.2kzweoh4","Outdoor non-smoke zo
 let special_areas_Name = {"Playground":"playgrounds-4qz9zw","Outdoor non-smoke zone":"outdoor_non-smoking_zones-0cy6cs", "Dog walking zone":"dog_walking_zones-7rk1re"}
 let special_areas_Color = {"Playground":"#a3a3c2","Outdoor non-smoke zone":"#a3a3c2", "Dog walking zone":"#a3a3c2"}
 
-function addLayer(transport,transport_layer, transport_name,transport_color) {
+function addLayer(transport,transport_layer, transport_name,transport_color, map) {
     map.addLayer({
         id: transport,
         type: "circle",
@@ -62,10 +62,11 @@ function addLayer(transport,transport_layer, transport_name,transport_color) {
         },
         "paint":{"circle-color":transport_color}
     })
+
 }
 
 
-function addLayerWithZoom(transport,transport_layer, transport_name,transport_color,zoom) {
+function addLayerWithZoom(transport,transport_layer, transport_name,transport_color,zoom,map) {
     map.addLayer({
         id: transport,
         type: "circle",
@@ -80,7 +81,7 @@ function addLayerWithZoom(transport,transport_layer, transport_name,transport_co
 }
 
 
-function addFillLayer(name, layer, layer_name, layer_color){
+function addFillLayer(name, layer, layer_name, layer_color,map){
     map.addLayer({
         id: name,
         type: "fill",
@@ -93,7 +94,7 @@ function addFillLayer(name, layer, layer_name, layer_color){
     })
 }
 
-function addLineLayer(layer, layer_name, layer_color){
+function addLineLayer(layer, layer_name, layer_color,map){
     map.addLayer({
         id: layer_name,
         type: "line",
@@ -106,9 +107,9 @@ function addLineLayer(layer, layer_name, layer_color){
     })
     console.log(layer_name+" added");
 }
-
-map.on("load", function(){
-    var x;
+//
+// map.on("load", function(){
+//     var x;
     // for(x of transports){
     //     addLayerWithZoom(x,transportLyaers[x], transportName[x], transportColor[x],13);
     //     addLineLayer(transport_route_Layers[x],transport_route_Name[x], transportColor[x]);
@@ -126,25 +127,25 @@ map.on("load", function(){
     //     item.appendChild(value);
     //     legend.appendChild(item);
     // }
-
-    for(x of place_of_interest){
-        addLayer(x, poiLayers[x],poiName[x],poiColor[x]);
-        map.setLayoutProperty(x, "visibility", "none");
-    }
-
-    for(x of convenience_facilities){
-        addLayer(x,cfLayer[x], cfName[x], cfColor[x]);
-        map.setLayoutProperty(x, "visibility","none");
-    }
-
-    for(x of special_areas){
-        addFillLayer(x,  special_areas_Layer[x], special_areas_Name[x], special_areas_Color[x]);
-        map.setLayoutProperty(x, "visibility", "none");
-    }
-
-    map.addControl(new mapboxgl.NavigationControl());
-
-});
+//
+//     for(x of place_of_interest){
+//         addLayer(x, poiLayers[x],poiName[x],poiColor[x]);
+//         map.setLayoutProperty(x, "visibility", "none");
+//     }
+//
+//     for(x of convenience_facilities){
+//         addLayer(x,cfLayer[x], cfName[x], cfColor[x]);
+//         map.setLayoutProperty(x, "visibility","none");
+//     }
+//
+//     for(x of special_areas){
+//         addFillLayer(x,  special_areas_Layer[x], special_areas_Name[x], special_areas_Color[x]);
+//         map.setLayoutProperty(x, "visibility", "none");
+//     }
+//
+//     map.addControl(new mapboxgl.NavigationControl());
+//
+// });
 
 
 
@@ -155,7 +156,7 @@ map.on("load", function(){
 //
 // mouseClick(transports);
 
-function mouseMove(layers){
+function mouseMove(layers, map){
     var layer;
     for(layer of layers){
         map.on('mouseenter', layer, function() {
@@ -169,7 +170,7 @@ function mouseMove(layers){
     }
 }
 
-function mouseClick(layers){
+function mouseClick(layers, map){
     var layer;
     for(layer of layers){
         map.on('click', layer, function(e){
@@ -182,18 +183,22 @@ function mouseClick(layers){
 }
 
 //creating the buttons to control the visibility of the each map layer
-setCorrespondingButton(place_of_interest, "poi_menu");
-setCorrespondingButton(convenience_facilities, "cf_menu");
-setCorrespondingButton(special_areas, "sa_menu")
+// setCorrespondingButton(place_of_interest, "poi_menu");
+// setCorrespondingButton(convenience_facilities, "cf_menu");
+// setCorrespondingButton(special_areas, "sa_menu")
 // set up the corresponding toggle button for each layer
-function setCorrespondingButton(transports, menu){
+function setCorrespondingButton(transports, menu, map){
+    const layers = document.getElementById(menu);
+    while(layers.firstChild){
+        layers.removeChild(layers.firstChild);
+    }
     for (var i = 0; i < transports.length; i++) {
         var id = transports[i];
         var link = document.createElement('a');
         link.href = '#';
         link.className = 'active';
         link.textContent = id;
-        // console.log(link.textContent);
+        console.log(link.textContent);
         link.onclick = function (e) {
             var clickedLayer = this.textContent;
             e.preventDefault();
@@ -210,15 +215,13 @@ function setCorrespondingButton(transports, menu){
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
             }
         };
-
-        var layers = document.getElementById(menu);
         layers.appendChild(link);
         link.className = '';
     }
 }
 
 
-function setCorrespondingTransportButton(transports, menu){
+function setCorrespondingTransportButton(transports, menu, map){
     const layers = document.getElementById(menu);
     while(layers.firstChild){
         layers.removeChild(layers.firstChild);

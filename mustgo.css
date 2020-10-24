@@ -173,15 +173,18 @@
     width:300px;
     height:800px;
     margin-right:0;
+    opacity: 1;
 }
 
 .fixedContainer {
-    background-color:#f2f0ef;
+    background-color:rgba(242, 240, 239, 0.5);
+    top: 300px;
     position: fixed;
     padding: 2em;
     right: 2%;
-    top: 57px;
+    top: 8%;
     border: 5px solid #7aacc7;
     border-radius: 10px;
     /* transform: translateX(-50%); */
 }
+

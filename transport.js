@@ -15,29 +15,24 @@ function OpenTransportLayers(){
         })
     );
 
-    // let transports = ["bus","tram","train","sky bus","night bus"];
-    // let transportLyaers = {"bus":"zwwang4.d6fbwpyn", "tram":"zwwang4.df9decyn","train":"zwwang4.5zoco9pq","sky bus":"zwwang4.bkxr7mi6","night bus":"zwwang4.9karz3fu"};
-    // let transportName = {"bus": "bus_stop-bisgow", "tram":"tram_stop-1wfy70","train":"train_station-1i70n4","sky bus":"sky_bus_stop-7qf27q","night bus":"night_bus_stop-asvh8x"};
-    // let transportColor = {"bus": "#de8282", "tram":"#668cff","train":"#ffcc00","sky bus":"#66ff33","night bus":"#ff6600"};
-    //
-    // let transport_route_Layers = {"bus":"zwwang4.2kz6w0iq","tram":"zwwang4.44idhdrf","train":"zwwang4.bis7pf0r","sky bus":"zwwang4.3urevqi7", "night bus":"zwwang4.4bjkmit2"}
-    // let transport_route_Name = {"bus":"bus_route-ae5rku","tram":"tram_route-a6u7q2", "train":"train_route-1dlqlx", "sky bus":"skybus_route-0tepci", "night bus":"night_bus_route-7e9883"}
 
     map.on("load", function() {
         var x;
         for (x of transports) {
-            addLayerWithZoom(x, transportLyaers[x], transportName[x], transportColor[x], 13);
-            addLineLayer(transport_route_Layers[x], transport_route_Name[x], transportColor[x]);
+            addLayerWithZoom(x, transportLyaers[x], transportName[x], transportColor[x], 13,map);
+            addLineLayer(transport_route_Layers[x], transport_route_Name[x], transportColor[x], map);
+            map.setLayoutProperty(x, 'visibility','none');
+            map.setLayoutProperty(transport_route_Name[x],'visibility', 'none');
         }
     });
 
     map.on('mousemove', function(e) {
         // Change the icon to a pointer icon when you mouse over a building
-        mouseMove(transports);
+        mouseMove(transports, map);
     });
 
-    mouseClick(transports);
+    mouseClick(transports, map);
 
-    setCorrespondingTransportButton(transports, 'menu');
+    setCorrespondingTransportButton(transports, 'menu', map);
 
 }
