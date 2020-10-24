@@ -19,9 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="navbar">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mustgo.css" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.css" afterDir="false" />
+=======
+    <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="information window">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +48,6 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2719" />
-    <option name="y" value="119" />
-    <option name="width" value="1536" />
-    <option name="height" value="836" />
   </component>
   <component name="ProjectId" id="1jDXXWcnsnnCKt4rRk9qYJt5wIv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -103,6 +102,7 @@
       <workItem from="1603356048579" duration="10945000" />
       <workItem from="1603458389130" duration="5174000" />
       <workItem from="1603519888429" duration="3000" />
+      <workItem from="1603519909293" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="navbar">
       <created>1603342644297</created>
@@ -178,7 +178,13 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< Updated upstream
             <State />
+=======
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+>>>>>>> Stashed changes
           </value>
         </entry>
       </map>
