@@ -23,5 +23,5 @@ function OpenPublicProperties(){
         }
     });
 
-    setCorrespondingButton(convenience_facilities, "cf_menu", map);
+    setCorrespondingButton(convenience_facilities, cfColor,"cf_menu", map);
 }
