@@ -1,7 +1,7 @@
 function OpenTransportLayers(){
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
+        style: 'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -51,6 +51,7 @@ function OpenTransportLayers(){
                 "circle-stroke-width":0.6
             }
         })
+
         map.setLayoutProperty('Train', "visibility","none");
         addLineLayer(transport_route_Layers['Train'], transport_route_Name['Train'], "#3a8fb7", map, 0.9);
         map.setLayoutProperty(transport_route_Name['Train'], "visibility","none");
@@ -72,6 +73,20 @@ function OpenTransportLayers(){
         map.setLayoutProperty('Night bus', "visibility","none");
         addLineLayer(transport_route_Layers['Night bus'], transport_route_Name['Night bus'], "#fe9a7e", map, 0.3);
         map.setLayoutProperty(transport_route_Name['Night bus'], "visibility","none");
+
+        map.addLayer({
+            id: "Free Tram Zoom",
+            type: "fill",
+            'source-layer': 'free_tram_zone-7amjpk',
+            source:{
+                type: 'vector',
+                url:("mapbox://")+"zwwang4.39f3px85"
+            },
+            "paint":{"fill-color":"#bec23f",
+                "fill-opacity": 0.2,
+                "fill-outline-color": "#bec23f",
+            }
+        })
 
     });
 
