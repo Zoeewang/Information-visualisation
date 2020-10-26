@@ -17,11 +17,11 @@ function openPlaygroundLayers(){
 
     map.on("load", function() {
         var x;
-    for(x of special_areas){
-        addFillLayer(x,  special_areas_Layer[x], special_areas_Name[x], special_areas_Color[x],map);
-        map.setLayoutProperty(x, "visibility", "none");
-    }
+        for(x of special_areas){
+            addFillLayer(x,  special_areas_Layer[x], special_areas_Name[x], special_areas_Color[x],map);
+            map.setLayoutProperty(x, "visibility", "none");
+        }
     });
 
-    setCorrespondingButton(special_areas, "sa_menu", map);
+    setCorrespondingButton(special_areas, special_areas_Color,"sa_menu", map);
 }

@@ -1,4 +1,4 @@
-function OpenPublicProperties(){
+function openLandOfMarks(){
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
@@ -17,11 +17,13 @@ function OpenPublicProperties(){
 
     map.on("load", function() {
         var x;
-        for(x of convenience_facilities){
-            addLayer(x,cfLayer[x], cfName[x], cfColor[x], map);
+        for(x of place_of_interest){
+            addLayer(x,poiLayers[x], poiName[x], poiColor[x], map);
             map.setLayoutProperty(x, "visibility","none");
         }
     });
 
-    setCorrespondingButton(convenience_facilities, cfColor,"cf_menu", map);
+    setCorrespondingButton(place_of_interest, poiColor,"poi_menu", map);
+
+    // poi_Buttons();
 }

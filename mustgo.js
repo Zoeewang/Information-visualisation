@@ -788,6 +788,7 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Melbourne Star Observation Wheel.jpg";
     });
+
     royal.addEventListener('click', function(e){
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
