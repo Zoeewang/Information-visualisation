@@ -1,9 +1,10 @@
 function startMap() {
     // this.visible=true
-    mapboxgl.accessToken = 'pk.eyJ1IjoieXVsaWdhbmciLCJhIjoiY2oycWd0N2piMDJkczJ3bndsOWs5ZWcxbyJ9.WzG80MkhSYNC2v4Mwrg-IA';
+    // mapboxgl.accessToken = 'pk.eyJ1IjoieXVsaWdhbmciLCJhIjoiY2oycWd0N2piMDJkczJ3bndsOWs5ZWcxbyJ9.WzG80MkhSYNC2v4Mwrg-IA';
+
     var gomap = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
+        style: "mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn", // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -27,7 +28,6 @@ function startMap() {
     var ngv_loc = {lat: -37.822387, lng:144.968874}
     var st_loc  = {lat: -37.821311, lng:144.979173}
     var old_loc = {lat: -37.813006, lng:144.974472}
-    var queen_loc= {lat: -37.80750, lng:144.957158}
 
 
 // create the popup

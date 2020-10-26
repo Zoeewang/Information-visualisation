@@ -1,7 +1,7 @@
-mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2Z5eXF5ZmIwN2d3MnlvMWthNXV0eDY1In0.N-0Dr177HFqwX9_VxWsy_g';
+mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
+    style: 'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location
     center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
     zoom: 13 // starting zoom
 });
@@ -37,7 +37,7 @@ let poiLayers = {"cafe/restaurant":"zwwang4.8ikyb6d5", "free and cheap support s
     "Land Marks and place of interest":"zwwang4.aqh2rqg0", "Public memorials and sculptures":"zwwang4.9967w9b4"};
 let poiName = {"cafe/restaurant":"cafe_restaurant_bistro_seats-bab3y3", "free and cheap support service":"free_and_cheap_support_servic-b4hdm5",
     "Land Marks and place of interest":"Landmarks_and_places_of_inter-5aaj26", "Public memorials and sculptures":"public_memorials_and_sculptur-6btkbm"};
-let poiColor = {"cafe/restaurant":"#00ccff", "free and cheap support service":"#00ccff","Land Marks and place of interest":"#00ccff", "Public memorials and sculptures":"#00ccff"};
+let poiColor = {"cafe/restaurant":"#e6a026", "free and cheap support service":"#1d95c4","Land Marks and place of interest":"#d64a4a", "Public memorials and sculptures":"#a1c851"};
 
 
 let convenience_facilities = ["Barbeque", "Bicycle Rails","Drinking fountains","Hoop", "Information Pillar","Picnic setting","Public toilet","Seat","Little bin"];
@@ -45,12 +45,12 @@ let cfLayer={"Barbeque":"zwwang4.3lg4xep6", "Bicycle Rails":"zwwang4.2oqn7jli","
     "Information Pillar":"zwwang4.0v4u2916","Picnic setting":"zwwang4.3cdmpl2k","Public toilet":"zwwang4.3r82pcrj","Seat":"zwwang4.99fbrhc9","Little bin":"zwwang4.3k5d7av3"};
 let cfName ={"Barbeque":"barbeque-cuezqy", "Bicycle Rails":"bicycle_rails-4l7cci","Drinking fountains":"drinking_fountains-8c61v0","Hoop":"Hoop-4hy87x",
     "Information Pillar":"Information_Pillar-a2pns0","Picnic setting":"Picnic_setting-4y2oya","Public toilet":"public_toilets-19xbh5","Seat":"seat-64bqae","Little bin":"litter_bin-9872ti"};
-let cfColor = {"Barbeque":"#996600", "Bicycle Rails":"#996600","Drinking fountains":"#996600","Hoop":"#996600", "Information Pillar":"#996600","Picnic setting":"#996600","Public toilet":"#996600","Seat":"#996600","Little bin":"#996600"}
+let cfColor = {"Barbeque":"#dc5757", "Bicycle Rails":"#8facd4","Drinking fountains":"#66beb5","Hoop":"#8facd4", "Information Pillar":"#77abc1","Picnic setting":"#ea943d","Public toilet":"#8d969b","Seat":"#e5b636","Little bin":"#8f8f8f"}
 
 let special_areas = ["Playground","Outdoor non-smoke zone", "Dog walking zone"];
 let special_areas_Layer = {"Playground":"zwwang4.2kzweoh4","Outdoor non-smoke zone":"zwwang4.0kcs10go","Dog walking zone":"zwwang4.2bbudk19"}
 let special_areas_Name = {"Playground":"playgrounds-4qz9zw","Outdoor non-smoke zone":"outdoor_non-smoking_zones-0cy6cs", "Dog walking zone":"dog_walking_zones-7rk1re"}
-let special_areas_Color = {"Playground":"#a3a3c2","Outdoor non-smoke zone":"#a3a3c2", "Dog walking zone":"#a3a3c2"}
+let special_areas_Color = {"Playground":"#ea943d","Outdoor non-smoke zone":"#becf50", "Dog walking zone":"#6ac68f"}
 
 function addLayer(transport,transport_layer, transport_name,transport_color, map) {
     map.addLayer({
@@ -223,13 +223,15 @@ function setCorrespondingTransportButton(transports, menu, map){
 
 // toggle layer visibility by changing the layout object's visibility property
             if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                 map.setLayoutProperty(transport_route_Name[clickedLayer],"visibility","none");
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+
                 this.className = '';
             } else {
                 this.className = 'active';
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
                 map.setLayoutProperty(transport_route_Name[clickedLayer],"visibility","visible");
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+
             }
         };
 
