@@ -1,10 +1,18 @@
 function startMap() {
     // this.visible=true
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
+
     // mapboxgl.accessToken = 'pk.eyJ1IjoieXVsaWdhbmciLCJhIjoiY2oycWd0N2piMDJkczJ3bndsOWs5ZWcxbyJ9.WzG80MkhSYNC2v4Mwrg-IA';
 
     var gomap = new mapboxgl.Map({
         container: 'map',
+<<<<<<< HEAD
         style: "mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp", // stylesheet location
+=======
+        style: "mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn", // stylesheet location
+
+>>>>>>> 18ba8953fb2985f8813ca89ca12b9ce21ace78a6
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -28,7 +36,8 @@ function startMap() {
     var ngv_loc = {lat: -37.822387, lng:144.968874}
     var st_loc  = {lat: -37.821311, lng:144.979173}
     var old_loc = {lat: -37.813006, lng:144.974472}
-    var queen_loc = {lat: -37.813006, lng:144.974472}
+    var queen_loc= {lat: -37.80750, lng:144.957158}
+
 
 
 // create the popup
@@ -374,6 +383,10 @@ function startMap() {
             var element = document.getElementById('barchart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById('thechart') != null){
+            var element = document.getElementById('thechart');
+            element.parentNode.removeChild(element);
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -391,7 +404,7 @@ function startMap() {
                 datasets: [
                     {
                         label: "",
-                        backgroundColor: ["#54478C","#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [898,857,865,947,947,1036,979]
                     }
                 ]
@@ -405,6 +418,8 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/Shrine_of_Rememberance.png";
+        document.getElementById("fixedContainer2").style.visibility = "visible";
+        window.hello = 0;
         // document.getElementById("p1").innerHTML = "New text!";
 
     });
@@ -416,6 +431,10 @@ function startMap() {
         // var ctx = document.getElementById('myChart').getContext("2d");
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
+            element.parentNode.removeChild(element);
+        }
+        if (document.getElementById('thechart') != null){
+            var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
         var canvas = document.createElement('canvas');
@@ -434,7 +453,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [510,395,367,384,372, 426,491]
                     }
                 ]
@@ -448,6 +467,7 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/ArtsCentre.jpg";
+        window.hello = 1;
     });
 
     etihad.addEventListener('click', function(e){
@@ -472,7 +492,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [256,700,772,775,788,824,368]
                     }
                 ]
@@ -486,6 +506,7 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/Marvel Studium.jpg";
+        window.hello = 2;
     });
 
     eureka.addEventListener('click', function(e){
@@ -510,7 +531,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [1308,1314,1367,1386,1418,1643,1542]
                     }
                 ]
@@ -1120,4 +1141,50 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Queen Victoria Market.jpg";
     });
+ }
+
+ var Monday = [[2,3,2,2,2,2,2,5,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
+var Tuesday = [[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
+
+ function everyday(day,landmark){
+    if (landmark == "hello"){
+        console.log("hahahahaha")
+    }
+     if (document.getElementById('thechart') != null){
+         var element = document.getElementById('thechart');
+         element.parentNode.removeChild(element);
+     }
+     var canvas = document.createElement('canvas');
+     canvas.id = "thechart";
+     canvas.width = 300;
+     canvas.height = 200;
+     var linechart = document.getElementById("linechart")
+     console.log(linechart)
+     linechart.appendChild(canvas);
+     var ctx = canvas.getContext("2d");
+     new Chart(ctx, {
+         type: 'line',
+         data: {
+             labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+             datasets: [{
+                 data: day[landmark],
+                 label: "Number of people",
+                 strokeColor: "rgba(151,187,205,1)",
+                 backgroundColor: "#79acc78a",
+                 borderColor: "#2a5e79",
+                 pointColor: "rgba(151,187,205,1)",
+                 pointStrokeColor: "#fff",
+                 pointHighlightFill: "#fff",
+                 pointHighlightStroke: "rgba(151,187,205,1)",
+             },
+             ]
+         },
+         options: {
+             title: {
+                 display: true,
+                 text: 'Number of Pedestrian by hour'
+             }
+         }
+     });
+
  }
