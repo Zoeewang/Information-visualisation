@@ -188,7 +188,7 @@
 }
 
 .fixedContainer {
-    background-color:rgba(242, 240, 239, 0.5);
+    background-color:#f8f9fad9;
 
     position: fixed;
     padding: 1em;
@@ -197,6 +197,19 @@
     border: 5px solid #7aacc7;
     border-radius: 10px;
     height: 600px;
+
+    /* transform: translateX(-50%); */
+}
+#fixedContainer2 {
+    background-color:#f8f9fad9;
+
+    position: fixed;
+    padding: 1em;
+    right: 20%;
+    top: 10%;
+    border: 5px solid #7aacc7;
+    border-radius: 10px;
+    height: 300px;
 
     /* transform: translateX(-50%); */
 }

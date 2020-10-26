@@ -75,8 +75,8 @@
 
 
 <div class="fixedContainer">
-    <h4 style="font-family: 'Source Serif Pro', serif;  font-size: 20px; text-align: center" >Information🐶</h4>
-
+    <h4 style="font-family: 'Source Serif Pro', serif;  font-size: 20px; text-align: center" >Information</h4>
+<!--    <button type="button" class="btn btn-light" style="position: center">👈 Pick a day</button>-->
     <div id="box">
 <!--    <canvas id="myChart" width="200" height="300"></canvas>-->
      </div>
@@ -86,12 +86,31 @@
     </div>
 
 </div>
+<div id="fixedContainer2" style="visibility: hidden">
+<!--    <h4 style="font-family: 'Source Serif Pro', serif;  font-size: 20px; text-align: center" >Information</h4>-->
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Pick a Day
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" onclick="everyday(Monday,hello)">Monday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Tuesday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Wednesday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Thursday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Friday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Saturday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(hello)">Sunday</a>
+    </div>
+    <div id="linechart">
+        <!--    <canvas id="myChart" width="200" height="300"></canvas>-->
+    </div>
+</div>
 
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src='main.js'></script>

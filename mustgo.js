@@ -378,6 +378,10 @@ function startMap() {
             var element = document.getElementById('barchart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById('thechart') != null){
+            var element = document.getElementById('thechart');
+            element.parentNode.removeChild(element);
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -395,7 +399,7 @@ function startMap() {
                 datasets: [
                     {
                         label: "",
-                        backgroundColor: ["#54478C","#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [898,857,865,947,947,1036,979]
                     }
                 ]
@@ -409,6 +413,8 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/Shrine_of_Rememberance.png";
+        document.getElementById("fixedContainer2").style.visibility = "visible";
+        window.hello = 0;
         // document.getElementById("p1").innerHTML = "New text!";
 
     });
@@ -420,6 +426,10 @@ function startMap() {
         // var ctx = document.getElementById('myChart').getContext("2d");
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
+            element.parentNode.removeChild(element);
+        }
+        if (document.getElementById('thechart') != null){
+            var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
         var canvas = document.createElement('canvas');
@@ -438,7 +448,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [510,395,367,384,372, 426,491]
                     }
                 ]
@@ -452,6 +462,7 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/ArtsCentre.jpg";
+        window.hello = 1;
     });
 
     etihad.addEventListener('click', function(e){
@@ -476,7 +487,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [256,700,772,775,788,824,368]
                     }
                 ]
@@ -490,6 +501,7 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/Marvel Studium.jpg";
+        window.hello = 2;
     });
 
     eureka.addEventListener('click', function(e){
@@ -514,7 +526,7 @@ function startMap() {
                 datasets: [
                     {
                         label:"",
-                        backgroundColor: ["#54478C", "#048BA8","#16DB93","#83E377","#EFEA5A","#F29E4C","#943126"],
+                        backgroundColor: ["#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7","#7aacc7"],
                         data: [1308,1314,1367,1386,1418,1643,1542]
                     }
                 ]
@@ -1124,4 +1136,50 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Queen Victoria Market.jpg";
     });
+ }
+
+ var Monday = [[2,3,2,2,2,2,2,5,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
+var Tuesday = [[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
+
+ function everyday(day,landmark){
+    if (landmark == "hello"){
+        console.log("hahahahaha")
+    }
+     if (document.getElementById('thechart') != null){
+         var element = document.getElementById('thechart');
+         element.parentNode.removeChild(element);
+     }
+     var canvas = document.createElement('canvas');
+     canvas.id = "thechart";
+     canvas.width = 300;
+     canvas.height = 200;
+     var linechart = document.getElementById("linechart")
+     console.log(linechart)
+     linechart.appendChild(canvas);
+     var ctx = canvas.getContext("2d");
+     new Chart(ctx, {
+         type: 'line',
+         data: {
+             labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+             datasets: [{
+                 data: day[landmark],
+                 label: "Number of people",
+                 strokeColor: "rgba(151,187,205,1)",
+                 backgroundColor: "#79acc78a",
+                 borderColor: "#2a5e79",
+                 pointColor: "rgba(151,187,205,1)",
+                 pointStrokeColor: "#fff",
+                 pointHighlightFill: "#fff",
+                 pointHighlightStroke: "rgba(151,187,205,1)",
+             },
+             ]
+         },
+         options: {
+             title: {
+                 display: true,
+                 text: 'Number of Pedestrian by hour'
+             }
+         }
+     });
+
  }
