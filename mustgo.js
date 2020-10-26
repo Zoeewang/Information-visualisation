@@ -7,12 +7,7 @@ function startMap() {
 
     var gomap = new mapboxgl.Map({
         container: 'map',
-<<<<<<< HEAD
         style: "mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp", // stylesheet location
-=======
-        style: "mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn", // stylesheet location
-
->>>>>>> 18ba8953fb2985f8813ca89ca12b9ce21ace78a6
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
