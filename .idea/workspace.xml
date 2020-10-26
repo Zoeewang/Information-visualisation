@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca119baa-6b25-48f7-86dc-270c126aa679" name="Default Changelist" comment="navbar">
+      <change afterPath="$PROJECT_DIR$/image/Eurekatower.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/Arts Centre Melbourne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/ArtsCentre.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mustgo.css" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mustgo.js" beforeDir="false" afterPath="$PROJECT_DIR$/mustgo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +47,6 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2719" />
-    <option name="y" value="119" />
-    <option name="width" value="1536" />
-    <option name="height" value="836" />
   </component>
   <component name="ProjectId" id="1jDXXWcnsnnCKt4rRk9qYJt5wIv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -103,6 +101,9 @@
       <workItem from="1603356048579" duration="10945000" />
       <workItem from="1603458389130" duration="5174000" />
       <workItem from="1603519888429" duration="3000" />
+      <workItem from="1603602865846" duration="1774000" />
+      <workItem from="1603610442454" duration="3958000" />
+      <workItem from="1603675247338" duration="1502000" />
     </task>
     <task id="LOCAL-00001" summary="navbar">
       <created>1603342644297</created>
@@ -167,11 +168,18 @@
       <option name="project" value="LOCAL" />
       <updated>1603539757223</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="navbar">
+      <created>1603540143650</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603540143650</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -204,5 +212,16 @@
     <MESSAGE value="information window" />
     <MESSAGE value="navbar" />
     <option name="LAST_COMMIT_MESSAGE" value="navbar" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/mustgo.js</url>
+          <line>355</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
