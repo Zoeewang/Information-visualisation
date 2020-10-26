@@ -1,6 +1,6 @@
 function startMap() {
     // this.visible=true
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
+    mapboxgl.accessToken = 'pk.eyJ1IjoieXVsaWdhbmciLCJhIjoiY2oycWd0N2piMDJkczJ3bndsOWs5ZWcxbyJ9.WzG80MkhSYNC2v4Mwrg-IA';
     var gomap = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/yuligang/ckgf40z3j29rh19qui5wnp8ix', // stylesheet location
