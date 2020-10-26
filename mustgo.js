@@ -4,7 +4,7 @@ function startMap() {
 
     var gomap = new mapboxgl.Map({
         container: 'map',
-        style: "mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn", // stylesheet location
+        style: "mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp", // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -28,6 +28,7 @@ function startMap() {
     var ngv_loc = {lat: -37.822387, lng:144.968874}
     var st_loc  = {lat: -37.821311, lng:144.979173}
     var old_loc = {lat: -37.813006, lng:144.974472}
+    var queen_loc = {lat: -37.813006, lng:144.974472}
 
 
 // create the popup

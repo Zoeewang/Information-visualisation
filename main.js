@@ -66,7 +66,6 @@ function addLayer(transport,transport_layer, transport_name,transport_color, map
 
 }
 
-
 function addLayerWithZoom(transport,transport_layer, transport_name,transport_color,zoom,map, stroke_color, radius, stroke_width) {
     map.addLayer({
         id: transport,
@@ -113,13 +112,6 @@ function addLineLayer(layer, layer_name, layer_color,map, line_width){
     console.log(layer_name+" added");
 }
 
-// map.on('mousemove', function(e) {
-//     // Change the icon to a pointer icon when you mouse over a building
-//     mouseMove(transports);
-// });
-//
-// mouseClick(transports);
-
 function mouseMove(layers, map){
     var layer;
     for(layer of layers){
@@ -146,11 +138,6 @@ function mouseClick(layers, map){
     }
 }
 
-//creating the buttons to control the visibility of the each map layer
-// setCorrespondingButton(place_of_interest, "poi_menu");
-// setCorrespondingButton(convenience_facilities, "cf_menu");
-// setCorrespondingButton(special_areas, "sa_menu")
-// set up the corresponding toggle button for each layer
 function setCorrespondingButton(transports, transportColor, menu, map){
     const layers = document.getElementById(menu);
     while(layers.lastChild){
@@ -158,7 +145,6 @@ function setCorrespondingButton(transports, transportColor, menu, map){
     }
     for (var i = 0; i < transports.length; i++) {
         var id = transports[i];
-        let color = transportColor[id];
         var link = document.createElement('a');
         link.href = '#';
         link.className = 'active';
@@ -180,17 +166,6 @@ function setCorrespondingButton(transports, transportColor, menu, map){
             } else {
                 this.className = 'active';
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-
-                let item = document.createElement('div');
-                let key = document.createElement('span');
-                let legend = document.getElementById("legend");
-                key.className = 'legend-key';
-                key.style.backgroundColor = color;
-                let value = document.createElement('span');
-                value.innerHTML = this.textContent;
-                item.appendChild(key);
-                item.appendChild(value);
-                legend.appendChild(item);
 
             }
 
@@ -240,6 +215,28 @@ function setCorrespondingTransportButton(transports, menu, map){
     }
 }
 
+function loadLegend(name_list, color_dict){
+    let legend = document.getElementById("legend");
+    while(legend.lastChild){
+        legend.removeChild(legend.lastChild);
+    }
+    let x;
+    for(x of name_list){
+        let color = color_dict[x];
+        let item = document.createElement('div');
+        let key = document.createElement('span');
+        key.className = 'legend-key';
+        key.style.backgroundColor = color;
+        key.style.borderRadius = "50%";
+        let value = document.createElement('span');
+        value.innerHTML = x;
+        item.appendChild(key);
+        item.appendChild(value);
+        legend.appendChild(item);
+    }
+}
+
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function transportButtons(){
@@ -256,6 +253,15 @@ function cf_Buttons(){
 
 function sa_Buttons(){
     document.getElementById("sa_menu").classList.toggle("show");
+}
+
+function addNavigationControl(map){
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    );
 }
 
 // Close the dropdown if the user clicks outside of it

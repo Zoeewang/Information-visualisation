@@ -30,5 +30,7 @@ function OpenPublicProperties(){
         }
     });
 
+    loadLegend(convenience_facilities, cfColor);
+
     setCorrespondingButton(convenience_facilities, cfColor,"cf_menu", map,);
 }

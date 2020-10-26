@@ -23,6 +23,8 @@ function openLandOfMarks(){
         }
     });
 
+    loadLegend(place_of_interest, poiColor);
+
     setCorrespondingButton(place_of_interest, poiColor,"poi_menu", map);
 
     // poi_Buttons();
