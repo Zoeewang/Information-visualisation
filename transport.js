@@ -118,5 +118,5 @@ function OpenTransportLayers(){
 
     setCorrespondingTransportButton(transports, 'menu', map);
 
-    let direct = document.getElementById("direction");
+    open_direction(map);
 }

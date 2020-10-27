@@ -20,9 +20,8 @@ var scale = new mapboxgl.ScaleControl({
     unit: 'imperial'
 });
 
-var mapbox_direction = new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-});
+
+let direction_on = false;
 
 map.addControl(scale);
 
@@ -253,6 +252,23 @@ function loadLegend(name_list, color_dict){
 }
 
 
+function open_direction(gomap){
+    let navigation_button = document.getElementById("direction");
+    let mapbox_direction;
+    console.log(navigation_button.className);
+    navigation_button.onclick = function(){
+        if(navigation_button.classList.contains("direction_on")){
+            gomap.removeControl(mapbox_direction);
+            navigation_button.style.top = "80px";
+        }else{
+            mapbox_direction = new MapboxDirections({accessToken: mapboxgl.accessToken});
+            gomap.addControl(mapbox_direction,'top-left');
+            navigation_button.style.top = "200px";
+        }
+        navigation_button.classList.toggle("direction_on");
+    }
+}
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function transportButtons(){
@@ -271,11 +287,13 @@ function sa_Buttons(){
     document.getElementById("sa_menu").classList.toggle("show");
 }
 
-function addNavigationControl(map, buttonClicked){
-    if(buttonClicked){
+function addNavigationControl(){
+    if(direction_on){
         map.remove(mapbox_direction);
+        direction_on = false;
     }else{
-        map.addControl(mapbox_direction);
+        map.addControl(mapbox_direction,'top-left');
+        direction_on = true;
     }
 }
 

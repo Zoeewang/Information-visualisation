@@ -16,15 +16,15 @@ function OpenPublicProperties(){
     );
 
     map.on("load", function() {
-        addLayerWithZoom("Barbeque", cfLayer['Barbeque'],cfName['Barbeque'], cfColor["Barbeque"], 0, map, "#ffffff", 3, 1);
+        addLayerWithZoom("Barbeque", cfLayer['Barbeque'],cfName['Barbeque'], cfColor["Barbeque"], 0, map, "#ffffff", 5, 1);
         addLayerWithZoom("Bicycle Rails", cfLayer["Bicycle Rails"], cfName["Bicycle Rails"], cfColor["Bicycle Rails"], 0 ,map,"#ffffff", 3, 1);
         addLayerWithZoom("Information Pillar", cfLayer["Information Pillar"], cfName["Information Pillar"], cfColor["Information Pillar"], 0, map, "#ffffff", 5, 1);
-        addLayerWithZoom("Picnic setting", cfLayer["Picnic setting"], cfName["Picnic setting"], "#ffffff", 0, map, cfColor["Picnic setting"], 4 ,2);
-        addLayerWithZoom("Drinking fountains", cfLayer["Drinking fountains"], cfName["Drinking fountains"], "#ffffff", 0, map, cfColor["Drinking fountains"], 5 ,1);
-        addLayerWithZoom("Hoop", cfLayer["Hoop"], cfName["Hoop"], "#ffffff", 0, map, cfColor["Hoop"], 6, 1);
-        addLayerWithZoom("Public toilet", cfLayer["Public toilet"], cfName["Public toilet"], "#ffffff", 0, map, cfColor["Public toilet"], 5, 1);
-        addLayerWithZoom("Seat", cfLayer["Seat"], cfName["Seat"], "#ffffff", 0, map, cfColor["Seat"], 2,1);
-        addLayerWithZoom("Little bin", cfLayer["Little bin"], cfName["Little bin"], "#ffffff", 0, map, cfColor["Little bin"], 2, 1);
+        addLayerWithZoom("Picnic setting", cfLayer["Picnic setting"], cfName["Picnic setting"], cfColor["Picnic setting"], 0, map, "#ffffff", 5 ,1);
+        addLayerWithZoom("Drinking fountains", cfLayer["Drinking fountains"], cfName["Drinking fountains"],  cfColor["Drinking fountains"], 0, map, "#ffffff", 5 ,1);
+        addLayerWithZoom("Hoop", cfLayer["Hoop"], cfName["Hoop"], cfColor["Hoop"], 0, map, "#ffffff", 3, 1);
+        addLayerWithZoom("Public toilet", cfLayer["Public toilet"], cfName["Public toilet"],  cfColor["Public toilet"], 0, map, "#ffffff", 5, 1);
+        addLayerWithZoom("Seat", cfLayer["Seat"], cfName["Seat"], cfColor["Seat"], 0, map, "#ffffff", 3,1);
+        addLayerWithZoom("Little bin", cfLayer["Little bin"], cfName["Little bin"], cfColor["Little bin"], 0, map, "#ffffff", 3, 1);
         for(x of convenience_facilities){
             map.setLayoutProperty(x, "visibility","none");
         }
@@ -97,5 +97,5 @@ function OpenPublicProperties(){
 
     setCorrespondingButton(cutted_public_properties, cfColor, "cf_menu", map, false);
 
-
+    open_direction(map);
 }

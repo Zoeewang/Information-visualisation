@@ -32,5 +32,6 @@ function openLandOfMarks(){
 
     setCorrespondingButton(place_of_interest, poiColor,"poi_menu", map, true);
 
+    open_direction(map);
     // poi_Buttons();
 }

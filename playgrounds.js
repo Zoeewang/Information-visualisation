@@ -20,4 +20,6 @@ function openPlaygroundLayers(){
     loadLegend(special_areas, special_areas_Color);
 
     setCorrespondingButton(special_areas, special_areas_Color,"sa_menu", map, true);
+
+    open_direction(map);
 }

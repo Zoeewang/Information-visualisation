@@ -1136,6 +1136,22 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Queen Victoria Market.jpg";
     });
+
+    let navigation_button = document.getElementById("direction");
+    let mapbox_direction;
+    console.log(navigation_button.className);
+    navigation_button.onclick = function(){
+        if(navigation_button.classList.contains("direction_on")){
+            gomap.removeControl(mapbox_direction);
+            navigation_button.style.top = "80px";
+        }else{
+            mapbox_direction = new MapboxDirections({accessToken: mapboxgl.accessToken});
+            gomap.addControl(mapbox_direction,'top-left');
+            navigation_button.style.top = "200px";
+        }
+        navigation_button.classList.toggle("direction_on");
+    }
+
  }
 
  var Monday = [[2,3,2,2,2,2,2,5,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
@@ -1181,5 +1197,6 @@ var Tuesday = [[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,
              }
          }
      });
+
 
  }
