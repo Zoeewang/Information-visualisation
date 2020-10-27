@@ -1,7 +1,7 @@
 function openLandOfMarks(){
     var map = new mapboxgl.Map({
         container: 'map',
-        style:'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location
+        style:'mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp', // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -18,14 +18,19 @@ function openLandOfMarks(){
     map.on("load", function() {
         var x;
         for(x of place_of_interest){
-            addLayerWithZoom(x,poiLayers[x], poiName[x],"#ffffff",0,map, poiColor[x], 2, 2);
-            map.setLayoutProperty(x, "visibility","none");
+            if(x==="Cafe/restaurant"){
+                addLayerWithZoom(x,poiLayers[x], poiName[x],poiColor[x],0,map, "#ffffff", 3, 1);
+                map.setLayoutProperty(x, "visibility","none");
+            }else{
+                addLayerWithZoom(x,poiLayers[x], poiName[x],poiColor[x],0,map, "#ffffff", 4, 1);
+                map.setLayoutProperty(x, "visibility","none");
+            }
         }
     });
 
     loadLegend(place_of_interest, poiColor);
 
-    setCorrespondingButton(place_of_interest, poiColor,"poi_menu", map);
+    setCorrespondingButton(place_of_interest, poiColor,"poi_menu", map, true);
 
     // poi_Buttons();
 }
