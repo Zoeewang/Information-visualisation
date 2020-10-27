@@ -1,5 +1,7 @@
 function startMap() {
     // this.visible=true
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
+    // document.getElementById("fixedContainer").style.visibility = "hidden";
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
 
@@ -374,6 +376,7 @@ function startMap() {
     //
     // });
     el.addEventListener('click', function(e){
+        document.getElementById("fixedContainer").style.visibility = "visible";
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
             element.parentNode.removeChild(element);
@@ -414,7 +417,7 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Shrine_of_Rememberance.png";
         document.getElementById("fixedContainer2").style.visibility = "visible";
-        window.hello = 0;
+        window.landmark = 0;
         // document.getElementById("p1").innerHTML = "New text!";
 
     });

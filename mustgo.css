@@ -187,7 +187,7 @@
     opacity: 1;
 }
 
-.fixedContainer {
+#fixedContainer {
     background-color:#f8f9fad9;
 
     position: fixed;
