@@ -15,51 +15,51 @@ function OpenPublicProperties(){
         })
     );
 
+    clearInfoBox();
+
     map.on("load", function() {
-        addLayerWithZoom("Barbeque", cfLayer['Barbeque'],cfName['Barbeque'], cfColor["Barbeque"], 0, map, "#ffffff", 5, 1);
+        addLayerWithZoom("Barbecue", cfLayer['Barbecue'],cfName['Barbecue'], cfColor["Barbecue"], 0, map, "#ffffff", 5, 1);
         addLayerWithZoom("Bicycle Rails", cfLayer["Bicycle Rails"], cfName["Bicycle Rails"], cfColor["Bicycle Rails"], 0 ,map,"#ffffff", 3, 1);
         addLayerWithZoom("Information Pillar", cfLayer["Information Pillar"], cfName["Information Pillar"], cfColor["Information Pillar"], 0, map, "#ffffff", 5, 1);
         addLayerWithZoom("Picnic setting", cfLayer["Picnic setting"], cfName["Picnic setting"], cfColor["Picnic setting"], 0, map, "#ffffff", 5 ,1);
         addLayerWithZoom("Drinking fountains", cfLayer["Drinking fountains"], cfName["Drinking fountains"],  cfColor["Drinking fountains"], 0, map, "#ffffff", 5 ,1);
         addLayerWithZoom("Hoop", cfLayer["Hoop"], cfName["Hoop"], cfColor["Hoop"], 0, map, "#ffffff", 3, 1);
-        addLayerWithZoom("Public toilet", cfLayer["Public toilet"], cfName["Public toilet"],  cfColor["Public toilet"], 0, map, "#ffffff", 5, 1);
-        addLayerWithZoom("Seat", cfLayer["Seat"], cfName["Seat"], cfColor["Seat"], 0, map, "#ffffff", 3,1);
-        addLayerWithZoom("Little bin", cfLayer["Little bin"], cfName["Little bin"], cfColor["Little bin"], 0, map, "#ffffff", 3, 1);
+        addLayerWithZoom("Public toilets", cfLayer["Public toilets"], cfName["Public toilets"],  cfColor["Public toilets"], 0, map, "#ffffff", 5, 1);
+        addLayerWithZoom("Seats", cfLayer["Seats"], cfName["Seats"], cfColor["Seats"], 0, map, "#ffffff", 3,1);
+        addLayerWithZoom("Little bins", cfLayer["Little bins"], cfName["Little bins"], cfColor["Little bins"], 0, map, "#ffffff", 3, 1);
         for(x of convenience_facilities){
             map.setLayoutProperty(x, "visibility","none");
         }
     });
-
-    loadLegend(convenience_facilities, cfColor);
 
     const layers = document.getElementById("cf_menu");
     while(layers.lastChild){
         layers.removeChild(layers.lastChild);
     }
 
-    let cutted_public_properties = ["Drinking fountains", "Information Pillar","Little bin", "Public toilet","Seat"];
+    let cutted_public_properties = ["Drinking fountains", "Information Pillar","Little bins", "Public toilets","Seats"];
 
-    //Add barbeque and picnic area button, and show or hide the layer of barbeque and picnic
+    //Add barbeque and picnic area button, and show or hide the layer of barbecue and picnic
     var link = document.createElement('a');
     link.href = '#';
     link.className = 'active';
-    link.textContent = "Barbeque & Picnic Area";
+    link.textContent = "Barbecues & Picnic settings";
     // console.log(link.textContent);
     link.onclick = function (e) {
         // var clickedLayer = this.textContent;
         e.preventDefault();
         e.stopPropagation();
 
-        var visibility = map.getLayoutProperty("Barbeque", 'visibility');
+        var visibility = map.getLayoutProperty("Barbecue", 'visibility');
 
-// toggle layer visibility by changing the layout object's visibility property
+        // toggle layer visibility by changing the layout object's visibility property
         if (visibility === 'visible') {
-            map.setLayoutProperty("Barbeque", 'visibility', 'none');
+            map.setLayoutProperty("Barbecue", 'visibility', 'none');
             map.setLayoutProperty("Picnic setting","visibility",'none');
             this.className = '';
         } else {
             this.className = 'active';
-            map.setLayoutProperty("Barbeque", 'visibility', 'visible');
+            map.setLayoutProperty("Barbecue", 'visibility', 'visible');
             map.setLayoutProperty("Picnic setting","visibility",'visible');
         }
     };
@@ -71,7 +71,7 @@ function OpenPublicProperties(){
     var link = document.createElement('a');
     link.href = '#';
     link.className = 'active';
-    link.textContent = "Bicycle rails and Hoop";
+    link.textContent = "Bicycle rails & Hoops";
     // console.log(link.textContent);
     link.onclick = function (e) {
         // var clickedLayer = this.textContent;
@@ -95,7 +95,46 @@ function OpenPublicProperties(){
     layers.appendChild(link);
     link.className = '';
 
-    setCorrespondingButton(cutted_public_properties, cfColor, "cf_menu", map, false);
 
+    setCorrespondingButton(cutted_public_properties, cfColor, "cf_menu", map, false);
+    let new_legend_list =  ["Barbecue","Picnic setting","Bicycle Rails","Hoop","Drinking fountains", "Information Pillar","Little bins", "Public toilets","Seats"]
+    loadLegend(new_legend_list, cfColor);
     open_direction(map);
+
+    map.on('click', "Drinking fountains", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Type: ' + e.features[0].properties["type"] + '</p>' +
+            '<p> Other description: ' + e.features[0].properties['other_description']+'</p>'
+
+    });
+
+    map.on('click', "Picnic setting", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_DESC"] + '</p>' +
+            '<p> Other description: ' + e.features[0].properties['DESCRIPTION']+'</p>'
+    });
+
+    map.on('click', "Public toilets", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["location"] + '</p>' +
+            '<p> Female: ' + e.features[0].properties['female']+'</p>' +
+            '<p> Male: ' + e.features[0].properties['male']+'</p>' +
+            '<p> Wheelchair: ' + e.features[0].properties['wheelchair']+'</p>' +
+            '<p> Baby facil: ' + e.features[0].properties['baby_facil']+'</p>'
+    });
+
+    map.on('click', "Barbecue", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_D"] + '</p>'
+    });
+
+    map.on('click', "Bicycle Rails", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_D"] + '</p>'
+    });
+
+    map.on('click', "Hoop", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_DESC"] + '</p>'
+    });
 }

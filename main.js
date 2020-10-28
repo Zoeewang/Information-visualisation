@@ -40,25 +40,25 @@ let transport_MOC_route_layer = {"Bus":"zwwang4.6bjpwlti", "Tram":"zwwang4.bjjb3
 let transport_MOC_route_Name = {"Bus": "bus_route-a48cyh","Tram":"cleaned_tram_routes_in_CoM-chupde", "Sky bus":"sky_bus_routes_in_CoM-1yr863",
                                 "Train":"train_routes_in_CoM-626ani", "Night bus":"night_bus_route-b5w1s3"};
 
-let place_of_interest = ["Cafe/restaurant", "Free and cheap support service","Land Marks and place of interest", "Public memorials and sculptures"];
-let poiLayers = {"Cafe/restaurant":"zwwang4.8ikyb6d5", "Free and cheap support service":"zwwang4.5ylprpgw",
-    "Land Marks and place of interest":"zwwang4.aqh2rqg0", "Public memorials and sculptures":"zwwang4.9967w9b4"};
-let poiName = {"Cafe/restaurant":"cafe_restaurant_bistro_seats-bab3y3", "Free and cheap support service":"free_and_cheap_support_servic-b4hdm5",
-    "Land Marks and place of interest":"Landmarks_and_places_of_inter-5aaj26", "Public memorials and sculptures":"public_memorials_and_sculptur-6btkbm"};
-let poiColor = {"Cafe/restaurant":"#e6a026", "Free and cheap support service":"#1d95c4","Land Marks and place of interest":"#d64a4a", "Public memorials and sculptures":"#a1c851"};
+let place_of_interest = ["Cafes & restaurants", "Convenient support services","Land Marks & places of interest", "Public memorials & sculptures"];
+let poiLayers = {"Cafes & restaurants":"zwwang4.8ikyb6d5", "Convenient support services":"zwwang4.5ylprpgw",
+    "Land Marks & places of interest":"zwwang4.aqh2rqg0", "Public memorials & sculptures":"zwwang4.9967w9b4"};
+let poiName = {"Cafes & restaurants":"cafe_restaurant_bistro_seats-bab3y3", "Convenient support services":"free_and_cheap_support_servic-b4hdm5",
+    "Land Marks & places of interest":"Landmarks_and_places_of_inter-5aaj26", "Public memorials & sculptures":"public_memorials_and_sculptur-6btkbm"};
+let poiColor = {"Cafes & restaurants":"#e6a026", "Convenient support services":"#1d95c4","Land Marks & places of interest":"#d66060", "Public memorials & sculptures":"#a1c851"};
 
 
-let convenience_facilities = ["Barbeque", "Bicycle Rails","Drinking fountains","Hoop", "Information Pillar","Picnic setting","Public toilet","Seat","Little bin"];
-let cfLayer={"Barbeque":"zwwang4.3lg4xep6", "Bicycle Rails":"zwwang4.2oqn7jli","Drinking fountains":"zwwang4.clemipy3","Hoop":"zwwang4.b196630g",
-    "Information Pillar":"zwwang4.0v4u2916","Picnic setting":"zwwang4.3cdmpl2k","Public toilet":"zwwang4.3r82pcrj","Seat":"zwwang4.99fbrhc9","Little bin":"zwwang4.3k5d7av3"};
-let cfName ={"Barbeque":"barbeque-cuezqy", "Bicycle Rails":"bicycle_rails-4l7cci","Drinking fountains":"drinking_fountains-8c61v0","Hoop":"Hoop-4hy87x",
-    "Information Pillar":"Information_Pillar-a2pns0","Picnic setting":"Picnic_setting-4y2oya","Public toilet":"public_toilets-19xbh5","Seat":"seat-64bqae","Little bin":"litter_bin-9872ti"};
-let cfColor = {"Barbeque":"#dc5757", "Bicycle Rails":"#8facd4","Drinking fountains":"#66beb5","Hoop":"#8facd4", "Information Pillar":"#77abc1","Picnic setting":"#ea943d","Public toilet":"#8d969b","Seat":"#e5b636","Little bin":"#8f8f8f"}
+let convenience_facilities = ["Barbecue", "Bicycle Rails","Drinking fountains","Hoop", "Information Pillar","Picnic setting","Public toilets","Seats","Little bins"];
+let cfLayer={"Barbecue":"zwwang4.3lg4xep6", "Bicycle Rails":"zwwang4.2oqn7jli","Drinking fountains":"zwwang4.clemipy3","Hoop":"zwwang4.b196630g",
+    "Information Pillar":"zwwang4.0v4u2916","Picnic setting":"zwwang4.3cdmpl2k","Public toilets":"zwwang4.3r82pcrj","Seats":"zwwang4.99fbrhc9","Little bins":"zwwang4.3k5d7av3"};
+let cfName ={"Barbecue":"barbeque-cuezqy", "Bicycle Rails":"bicycle_rails-4l7cci","Drinking fountains":"drinking_fountains-8c61v0","Hoop":"Hoop-4hy87x",
+    "Information Pillar":"Information_Pillar-a2pns0","Picnic setting":"Picnic_setting-4y2oya","Public toilets":"public_toilets-19xbh5","Seats":"seat-64bqae","Little bins":"litter_bin-9872ti"};
+let cfColor = {"Barbecue":"#dc5757", "Bicycle Rails":"#8facd4","Drinking fountains":"#66beb5","Hoop":"#8facd4", "Information Pillar":"#77abc1","Picnic setting":"#ea943d","Public toilets":"#8d969b","Seats":"#e5b636","Little bins":"#8f8f8f"}
 
-let special_areas = ["Dog walking zone", "Outdoor non-smoke zone", "Playground"];
-let special_areas_Layer = {"Playground":"zwwang4.2kzweoh4","Outdoor non-smoke zone":"zwwang4.0kcs10go","Dog walking zone":"zwwang4.2bbudk19"}
-let special_areas_Name = {"Playground":"playgrounds-4qz9zw","Outdoor non-smoke zone":"outdoor_non-smoking_zones-0cy6cs", "Dog walking zone":"dog_walking_zones-7rk1re"}
-let special_areas_Color = {"Playground":"#ea943d","Outdoor non-smoke zone":"#becf50", "Dog walking zone":"#6ac68f"}
+let special_areas = ["Dog walking zones", "Outdoor non-smoke zones", "Playgrounds"];
+let special_areas_Layer = {"Playgrounds":"zwwang4.2kzweoh4","Outdoor non-smoke zones":"zwwang4.0kcs10go","Dog walking zones":"zwwang4.2bbudk19"}
+let special_areas_Name = {"Playgrounds":"playgrounds-4qz9zw","Outdoor non-smoke zones":"outdoor_non-smoking_zones-0cy6cs", "Dog walking zones":"dog_walking_zones-7rk1re"}
+let special_areas_Color = {"Playgrounds":"#ea943d","Outdoor non-smoke zones":"#becf50", "Dog walking zones":"#6ac68f"}
 
 function addLayer(transport,transport_layer, transport_name,transport_color, map) {
     map.addLayer({
@@ -139,10 +139,10 @@ function mouseClick(layers, map){
     var layer;
     for(layer of layers){
         map.on('click', layer, function(e){
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML('Stop: ' + e.features[0].properties.STOP_ID + '<br>' + e.features[0].properties.STOP_NAME)
-                .addTo(map);
+            let div = document.getElementById('dot_info');
+            div.innerHTML = '<p> Route: ' + e.features[0].properties.ROUTEUSSP + '</p>' + '<p> Stop: ' +
+                e.features[0].properties.STOP_NAME+'</p>'
+
         });
     }
 }
@@ -212,6 +212,8 @@ function setCorrespondingTransportButton(transports, menu, map){
                 map.setLayoutProperty(transport_MOC_route_Name[clickedLayer], "visibility", "none");
                 if(clickedLayer==="Tram"){
                     map.setLayoutProperty("Free Tram Zoom","visibility",'none');
+                    map.setLayoutProperty("free_tram_zone_boundary_line-dabmgp", 'visibility','none');
+
                 }
                 this.className = '';
             } else {
@@ -221,6 +223,7 @@ function setCorrespondingTransportButton(transports, menu, map){
                 map.setLayoutProperty(transport_MOC_route_Name[clickedLayer],"visibility", "visible");
                 if(clickedLayer==="Tram"){
                     map.setLayoutProperty("Free Tram Zoom","visibility",'visible');
+                    map.setLayoutProperty("free_tram_zone_boundary_line-dabmgp", 'visibility','visible');
                 }
             }
         };
@@ -286,14 +289,18 @@ function cf_Buttons(){
 function sa_Buttons(){
     document.getElementById("sa_menu").classList.toggle("show");
 }
+//remove all elements in fixedContainer1
+function clearInfoBox(){
+    let pic = document.getElementById("landmark_image");
+    let charts = document.getElementById("box");
+    let dot_info = document.getElementById("dot_info");
+    while(dot_info.lastChild){
+        dot_info.removeChild(dot_info.lastChild);
+    }
+    pic.src = "";
 
-function addNavigationControl(){
-    if(direction_on){
-        map.remove(mapbox_direction);
-        direction_on = false;
-    }else{
-        map.addControl(mapbox_direction,'top-left');
-        direction_on = true;
+    while(charts.lastChild){
+        charts.removeChild(charts.lastChild);
     }
 }
 
