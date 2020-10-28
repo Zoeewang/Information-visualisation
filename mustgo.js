@@ -9,8 +9,7 @@ function startMap() {
 
     var gomap = new mapboxgl.Map({
         container: 'map',
-        style: "mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn", // stylesheet location
-
+        style: "mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp", // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -35,6 +34,7 @@ function startMap() {
     var st_loc  = {lat: -37.816865, lng:144.967718}
     var old_loc = {lat: -37.813006, lng:144.974472}
     var queen_loc= {lat: -37.80750, lng:144.957158}
+
 
 
 // create the popup
@@ -1139,6 +1139,22 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Queen Victoria Market.jpg";
     });
+
+    let navigation_button = document.getElementById("direction");
+    let mapbox_direction;
+    console.log(navigation_button.className);
+    navigation_button.onclick = function(){
+        if(navigation_button.classList.contains("direction_on")){
+            gomap.removeControl(mapbox_direction);
+            navigation_button.style.top = "80px";
+        }else{
+            mapbox_direction = new MapboxDirections({accessToken: mapboxgl.accessToken});
+            gomap.addControl(mapbox_direction,'top-left');
+            navigation_button.style.top = "200px";
+        }
+        navigation_button.classList.toggle("direction_on");
+    }
+
  }
 
  var Monday = [[2,3,2,2,2,2,2,5,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]]
@@ -1184,5 +1200,6 @@ var Tuesday = [[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[2,2,2,2,2,2,2,
              }
          }
      });
+
 
  }

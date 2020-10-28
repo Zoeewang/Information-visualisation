@@ -6,15 +6,6 @@ function openPlaygroundLayers(){
         zoom: 13 // starting zoom
     });
 
-    map.addControl(
-        new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true
-        })
-    );
-
     map.on("load", function() {
         var x;
         for(x of special_areas){
@@ -23,5 +14,12 @@ function openPlaygroundLayers(){
         }
     });
 
-    setCorrespondingButton(special_areas, special_areas_Color,"sa_menu", map);
+    // let direct = document.getElementById("direction");
+    // direct.addEventListener("click", addNavigationControl(map));
+
+    loadLegend(special_areas, special_areas_Color);
+
+    setCorrespondingButton(special_areas, special_areas_Color,"sa_menu", map, true);
+
+    open_direction(map);
 }

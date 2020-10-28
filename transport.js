@@ -1,7 +1,7 @@
 function OpenTransportLayers(){
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location
+        style: 'mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp', // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 13 // starting zoom
     });
@@ -15,8 +15,12 @@ function OpenTransportLayers(){
         })
     );
 
-
     map.on("load", function() {
+        //Tram
+        addLineLayer(transport_route_Layers['Tram'],transport_route_Name['Tram'],"#cccccc", map, 2.5);
+        map.setLayoutProperty(transport_route_Name['Tram'], "visibility","none");
+        addLineLayer(transport_MOC_route_layer['Tram'],transport_MOC_route_Name['Tram'],transportColor['Tram'],map, 2.5);
+        map.setLayoutProperty(transport_MOC_route_Name['Tram'],"visibility","none");
         map.addLayer({
             id: "Tram",
             type: "circle",
@@ -27,15 +31,18 @@ function OpenTransportLayers(){
                 url:("mapbox://")+transportLyaers["Tram"]
             },
             "paint":{"circle-color":"#ffffff",
-                    "circle-stroke-color": "#72ad5b",
-                    "circle-radius": 3,
-                    "circle-stroke-width":0.6
+                    "circle-stroke-color": "#69ad4e",
+                    "circle-radius": 4,
+                    "circle-stroke-width":2.2
             }
         })
         map.setLayoutProperty('Tram', "visibility","none");
-        addLineLayer(transport_route_Layers['Tram'],transport_route_Name['Tram'],"#72ad5b", map, 0.7);
-        map.setLayoutProperty(transport_route_Name['Tram'], "visibility","none");
 
+        //Train
+        addLineLayer(transport_route_Layers['Train'], transport_route_Name['Train'], "#cccccc", map, 3);
+        map.setLayoutProperty(transport_route_Name['Train'], "visibility","none");
+        addLineLayer(transport_MOC_route_layer["Train"], transport_MOC_route_Name["Train"], transportColor['Train'], map, 3);
+        map.setLayoutProperty(transport_MOC_route_Name["Train"],"visibility","none");
         map.addLayer({
             id: "Train",
             type: "circle",
@@ -47,32 +54,40 @@ function OpenTransportLayers(){
             },
             "paint":{"circle-color":"#ffffff",
                 "circle-stroke-color": "#3a8fb7",
-                "circle-radius": 3,
-                "circle-stroke-width":0.6
+                "circle-radius": 4,
+                "circle-stroke-width":2
             }
         })
 
         map.setLayoutProperty('Train', "visibility","none");
-        addLineLayer(transport_route_Layers['Train'], transport_route_Name['Train'], "#3a8fb7", map, 0.9);
-        map.setLayoutProperty(transport_route_Name['Train'], "visibility","none");
 
-        addLayerWithZoom("Sky bus", transportLyaers['Sky bus'], transportName['Sky bus'], "#ffffff",
-            13, map, "#ffa028", 2, 0.4);
-        map.setLayoutProperty('Sky bus', "visibility","none");
-        addLineLayer(transport_route_Layers['Sky bus'], transport_route_Name['Sky bus'], "#ffa028", map, 0.3);
+        //Sky bus
+        addLineLayer(transport_route_Layers['Sky bus'], transport_route_Name['Sky bus'], "#cccccc", map, 1.5);
         map.setLayoutProperty(transport_route_Name['Sky bus'], "visibility","none");
+        addLineLayer(transport_MOC_route_layer["Sky bus"], transport_MOC_route_Name["Sky bus"], transportColor['Sky bus'], map, 1,5);
+        map.setLayoutProperty(transport_MOC_route_Name["Sky bus"],"visibility","none");
+        addLayerWithZoom("Sky bus", transportLyaers['Sky bus'], transportName['Sky bus'], "#ffffff",
+            13, map, "#ffa028", 4, 2);
+        map.setLayoutProperty('Sky bus', "visibility","none");
 
-        addLayerWithZoom("Bus", transportLyaers['Bus'], transportName['Bus'], "#ffffff",
-            13, map, "#f76f49", 2, 0.4);
-        map.setLayoutProperty('Bus', "visibility","none");
-        addLineLayer(transport_route_Layers['Bus'], transport_route_Name['Bus'], "#f76f49", map, 0.4);
+        //Bus
+        addLineLayer(transport_route_Layers['Bus'], transport_route_Name['Bus'], "#cccccc", map, 2);
         map.setLayoutProperty(transport_route_Name['Bus'], "visibility","none");
+        addLineLayer(transport_MOC_route_layer["Bus"], transport_MOC_route_Name["Bus"], transportColor['Bus'], map, 2);
+        map.setLayoutProperty(transport_MOC_route_Name["Bus"],"visibility","none");
+        addLayerWithZoom("Bus", transportLyaers['Bus'], transportName['Bus'], "#ffffff",
+            13, map, "#f76f49", 4, 2);
+        map.setLayoutProperty('Bus', "visibility","none");
 
-        addLayerWithZoom("Night bus", transportLyaers['Night bus'], transportName['Night bus'], "#ffffff",
-            13, map, "#fe9a7e", 2, 0.4);
-        map.setLayoutProperty('Night bus', "visibility","none");
-        addLineLayer(transport_route_Layers['Night bus'], transport_route_Name['Night bus'], "#fe9a7e", map, 0.3);
+        //Night bus
+        addLineLayer(transport_route_Layers['Night bus'], transport_route_Name['Night bus'], "#cccccc", map, 1.5);
         map.setLayoutProperty(transport_route_Name['Night bus'], "visibility","none");
+        addLineLayer(transport_MOC_route_layer["Night bus"], transport_MOC_route_Name["Night bus"], transportColor['Night bus'], map, 1.5);
+        map.setLayoutProperty(transport_MOC_route_Name["Night bus"],"visibility","none");
+        addLayerWithZoom("Night bus", transportLyaers['Night bus'], transportName['Night bus'], "#ffffff",
+            13, map, "#fe9a7e", 4, 2);
+        map.setLayoutProperty('Night bus', "visibility","none");
+
 
         map.addLayer({
             id: "Free Tram Zoom",
@@ -84,9 +99,10 @@ function OpenTransportLayers(){
             },
             "paint":{"fill-color":"#bec23f",
                 "fill-opacity": 0.2,
-                "fill-outline-color": "#bec23f",
+                "fill-outline-color": "#bec23f"
             }
         })
+        map.setLayoutProperty("Free Tram Zoom","visibility",'none');
 
     });
 
@@ -97,6 +113,10 @@ function OpenTransportLayers(){
     //
     // mouseClick(transports, map);
     //
+
+    loadLegend(transports, transportColor);
+
     setCorrespondingTransportButton(transports, 'menu', map);
 
+    open_direction(map);
 }
