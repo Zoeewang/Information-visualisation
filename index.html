@@ -75,7 +75,7 @@
         <div class="map-overlay" id="legend"></div>
 
 
-<div class="fixedContainer">
+<div id="fixedContainer" style="visibility: visible">
     <h4 style="font-family: 'Source Serif Pro', serif;  font-size: 20px; text-align: center" >Information</h4>
 <!--    <button type="button" class="btn btn-light" style="position: center">👈 Pick a day</button>-->
     <div id="box">
@@ -93,13 +93,13 @@
         Pick a Day
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" onclick="everyday(Monday,hello)">Monday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Tuesday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Wednesday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Thursday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Friday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Saturday</a>
-        <a class="dropdown-item" href="#" onclick="everyday(hello)">Sunday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Monday,landmark)">Monday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Tuesday, landmark)">Tuesday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Wednesday, landmark)">Wednesday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Thursday, landmark)">Thursday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Friday, landmark)">Friday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Saturday, landmark)">Saturday</a>
+        <a class="dropdown-item" href="#" onclick="everyday(Sunday, landmark)">Sunday</a>
     </div>
     <div id="linechart">
         <!--    <canvas id="myChart" width="200" height="300"></canvas>-->

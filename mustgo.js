@@ -1,5 +1,7 @@
 function startMap() {
     // this.visible=true
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
+    // document.getElementById("fixedContainer").style.visibility = "hidden";
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
 
@@ -29,7 +31,7 @@ function startMap() {
     var parli_loc = {lat: -37.810852, lng:144.973757}
     var sea_loc = {lat: -37.820466, lng:144.958201}
     var ngv_loc = {lat: -37.822387, lng:144.968874}
-    var st_loc  = {lat: -37.821311, lng:144.979173}
+    var st_loc  = {lat: -37.816865, lng:144.967718}
     var old_loc = {lat: -37.813006, lng:144.974472}
     var queen_loc= {lat: -37.80750, lng:144.957158}
 
@@ -124,8 +126,8 @@ function startMap() {
             '<canvas id="myChart" width="20" height="20"></canvas>');
 
     var st_popup = new mapboxgl.Popup({ offset: 15 })
-        .setHTML('<h6><b>St Patrick\'s Cathedral </b></h6>'+ '<p style="color:gray">Catholic Church</p>' +
-            '<p>Approach the mother church of the Catholic Archdiocese of Melbourne from the impressive Pilgrim Path, absorbing the tranquil sounds of running water and spiritual quotes before seeking sanctuary beneath the gargoyles and spires.<br><br><b> Opening Hours</b> <br> Monday to Friday : 10 am to 4 pm<br> Saturday & Sunday : 10 am to 4 pm</p>'
+        .setHTML('<h6><b>St Paul\'s Cathedral </b></h6>'+ '<p style="color:gray">Catholic Church</p>' +
+            '<p>St Paul\'s Cathedral is an Anglican cathedral in Melbourne, Australia. It is the cathedral church of the Diocese of Melbourne and the seat of the Archbishop of Melbourne, who is also the metropolitan archbishop of the Province of Victoria and, since 28 June 2014, the present seat of the Primate of Australia.<br><br><b> Opening Hours</b> <br> Monday to Friday : 10 am to 4 pm<br> Saturday & Sunday : 10 am to 4 pm</p>'
             +'<canvas id="myChart" width="20" height="20"></canvas>');
 
     var old_popup = new mapboxgl.Popup({ offset: 15 })
@@ -374,6 +376,7 @@ function startMap() {
     //
     // });
     el.addEventListener('click', function(e){
+        document.getElementById("fixedContainer").style.visibility = "visible";
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
             element.parentNode.removeChild(element);
@@ -414,7 +417,7 @@ function startMap() {
         });
         document.getElementById("landmark_image").src = "./image/Shrine_of_Rememberance.png";
         document.getElementById("fixedContainer2").style.visibility = "visible";
-        window.hello = 0;
+        window.landmark = 0;
         // document.getElementById("p1").innerHTML = "New text!";
 
     });
@@ -653,8 +656,8 @@ function startMap() {
             }
         });
         document.getElementById("landmark_image").src = "./image/Immigration Museum.jpg";
-
     });
+
     dock.addEventListener('click', function(e){
         if (document.getElementById('barchart') != null){
             var element = document.getElementById('barchart');
