@@ -1,4 +1,5 @@
 function openPlaygroundLayers(){
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location

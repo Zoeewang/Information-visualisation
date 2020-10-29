@@ -1,4 +1,5 @@
 function openLandOfMarks(){
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
     var map = new mapboxgl.Map({
         container: 'map',
         style:'mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp', // stylesheet location
