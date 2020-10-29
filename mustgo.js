@@ -11,9 +11,9 @@ function startMap() {
         container: 'map',
         style: "mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp", // stylesheet location
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
-        zoom: 13 // starting zoom
+        zoom: 14 // starting zoom
     });
-
+    clearInfoBox();
     var shrine_loc = {lat: -37.829906, lng: 144.973442}
     var arts_loc = {lat:-37.820060, lng:144.968138}
     var etihad_loc = {lat: -37.816327, lng:144.947463}
