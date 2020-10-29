@@ -1,4 +1,6 @@
 function OpenTransportLayers(){
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
+    clearInfoBox();
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp', // stylesheet location
@@ -54,7 +56,7 @@ function OpenTransportLayers(){
             },
             "paint":{"circle-color":"#ffffff",
                 "circle-stroke-color": "#3a8fb7",
-                "circle-radius": 4,
+                "circle-radius": 6,
                 "circle-stroke-width":2
             }
         })
@@ -103,15 +105,17 @@ function OpenTransportLayers(){
             }
         })
         map.setLayoutProperty("Free Tram Zoom","visibility",'none');
+        addLineLayer("zwwang4.1zjq6567","free_tram_zone_boundary_line-dabmgp","#003300",map, 5);
+        map.setLayoutProperty("free_tram_zone_boundary_line-dabmgp", 'visibility','none');
 
     });
 
-    // map.on('mousemove', function(e) {
-    //     // Change the icon to a pointer icon when you mouse over a building
-    //     mouseMove(transports, map);
-    // });
+    map.on('mousemove', function(e) {
+        // Change the icon to a pointer icon when you mouse over a building
+        mouseMove(transports, map);
+    });
     //
-    // mouseClick(transports, map);
+    mouseClick(transports, map);
     //
 
     loadLegend(transports, transportColor);

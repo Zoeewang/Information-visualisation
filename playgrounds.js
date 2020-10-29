@@ -17,9 +17,25 @@ function openPlaygroundLayers(){
     // let direct = document.getElementById("direction");
     // direct.addEventListener("click", addNavigationControl(map));
 
+    clearInfoBox();
+
     loadLegend(special_areas, special_areas_Color);
 
     setCorrespondingButton(special_areas, special_areas_Color,"sa_menu", map, true);
 
     open_direction(map);
+
+    map.on('click', "Playgrounds", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>' +
+            '<p> Location: ' + e.features[0].properties['location_d']+'</p>' +
+            '<p> Features: ' + e.features[0].properties['features'] + '</p>'
+    });
+
+    map.on('click', "Outdoor non-smoke zones", function(e){
+        let div = document.getElementById('dot_info');
+        div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>'
+    });
+
+
 }

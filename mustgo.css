@@ -3,8 +3,10 @@
 #shrine {
     background-image: url('./icon/Shrine of Remembrance (no label).png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 71px;*/
+    /*height: 60px;*/
+    width: 57px;
+    height: 48px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -12,8 +14,10 @@
 #arts {
     background-image: url('./icon/Arts Centre Melbourne.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 77px;*/
+    /*height: 100px;*/
+    width: 62px;
+    height: 80px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -21,8 +25,10 @@
 #etihad {
     background-image: url('./icon/Etihad Studium.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 104px;*/
+    /*height: 54px;*/
+    width: 118px;
+    height: 43px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -30,8 +36,10 @@
 #eureka {
     background-image: url('./icon/Eureka Tower SkyDeck.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 44px;*/
+    /*height: 148px;*/
+    width: 35px;
+    height: 118px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -39,88 +47,110 @@
 #fed {
     background-image: url('./icon/Federation Square.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 132px;*/
+    /*height: 45px;*/
+    width: 105px;
+    height: 36px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #flind {
     background-image: url('./icon/flinders street station (no label).png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 83px;*/
+    /*height: 72px;*/
+    width: 66px;
+    height: 58px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #immi {
     background-image: url('./icon/Immigration Museum.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 102px;*/
+    /*height: 45px;*/
+    width: 82px;
+    height: 36px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #dock {
     background-image: url('./icon/Library at the Dock.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 112px;*/
+    /*height: 47px;*/
+    width: 90px;
+    height: 38px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #convention {
     background-image: url('./icon/Melbourne Convention and Exhibition Centre.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 158px;*/
+    /*height: 37px;*/
+    width: 90px;
+    height: 46px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #museum {
     background-image: url('./icon/Melbourne Museum & IMAX Cinema.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 86px;*/
+    /*height: 90px;*/
+    width: 127px;
+    height: 30px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #state {
     background-image: url('./icon/State Library of Victoria.png');
     background-size: contain;
+    /*width: 63px;*/
+    /*height: 51px;*/
     width: 50px;
-    height: 50px;
+    height: 41px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #star {
     background-image: url('./icon/Melbourne Star Observation Wheel.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 124px;*/
+    /*height: 48px;*/
+    width: 69px;
+    height: 72px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #royal {
     background-image: url('./icon/Royal Exhibition Building.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 90px;*/
+    /*height: 79px;*/
+    width: 72px;
+    height: 63px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #southern {
     background-image: url('./icon/Southern Cross Station.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 104px;*/
+    /*height: 42px;*/
+    width: 83px;
+    height: 34px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 #parli {
     background-image: url('./icon/Parliament House.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 128px;*/
+    /*height: 58px;*/
+    width: 102px;
+    height: 46px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -128,8 +158,10 @@
 #sea {
     background-image: url('./icon/SEA LIFE Melbourne Aquarium.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 138px;*/
+    /*height: 48px;*/
+    width: 110px;
+    height: 39px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -137,8 +169,10 @@
 #ngv {
     background-image: url('./icon/NGV Melbourne.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 115px;*/
+    /*height: 61px;*/
+    width: 92px;
+    height: 49px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -146,8 +180,10 @@
 #st {
     background-image: url('./icon/St Puals Cathedral.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 67px;*/
+    /*height: 105px;*/
+    width: 54px;
+    height: 84px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -155,8 +191,10 @@
 #old {
     background-image: url('./icon/Old Treasury Building.png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 127px;*/
+    /*height: 57px;*/
+    width: 90px;
+    height: 46px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -164,8 +202,10 @@
 #queenvic {
     background-image: url('./icon/Victoria Market (no label).png');
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    /*width: 106px;*/
+    /*height: 46px;*/
+    width: 85px;
+    height: 37px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -197,7 +237,7 @@
     border: 5px solid #7aacc7;
     border-radius: 10px;
     height: 600px;
-
+    max-width: 300px;
     /* transform: translateX(-50%); */
 }
 #fixedContainer2 {
