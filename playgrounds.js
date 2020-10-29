@@ -27,14 +27,20 @@ function openPlaygroundLayers(){
 
     map.on('click', "Playgrounds", function(e){
         let div = document.getElementById('dot_info');
-        div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>' +
-            '<p> Location: ' + e.features[0].properties['location_d']+'</p>' +
-            '<p> Features: ' + e.features[0].properties['features'] + '</p>'
+
+        div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>';
+        if(e.features[0].properties['location_d']!==""){
+            div.innerHTML += '<p> Location: ' + e.features[0].properties['location_d']+'</p>';
+        }
+        if(e.features[0].properties['features']!==""){
+            div.innerHTML +=  '<p> Features: ' + e.features[0].properties['features'] + '</p>';
+        }
+
     });
 
     map.on('click', "Outdoor non-smoke zones", function(e){
         let div = document.getElementById('dot_info');
-        div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>'
+        div.innerHTML = '<p> Location: ' + e.features[0].properties["name"] + '</p>'
     });
 
     let mouseMovingList = ["Playgrounds", "Outdoor non-smoke zones"];

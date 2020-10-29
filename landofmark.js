@@ -49,7 +49,7 @@ function openLandOfMarks(){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Cafe/Restaurant Name: ' + e.features[0].properties["Trading na"] + '</p>' +
             '<p> Address: ' + e.features[0].properties['Street add']+'</p>' +
-            '<p> Seat type: ' + e.features[0].properties['Seating ty']+'</p>' +
+            '<p> Seat type: ' + e.features[0].properties['Seating ty'].substring(8)+'</p>' +
             '<p> Number of seats: ' + e.features[0].properties['Number of']+'</p>'
 
     });
