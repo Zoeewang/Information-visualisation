@@ -229,14 +229,13 @@
 
 #fixedContainer {
     background-color:#f8f9fad9;
-
     position: fixed;
     padding: 1em;
     right: 2%;
     top: 10%;
     border: 5px solid #7aacc7;
     border-radius: 10px;
-    height: 500px;
+    height: fit-content;
     max-width: 300px;
     /* transform: translateX(-50%); */
 }

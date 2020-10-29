@@ -1,4 +1,5 @@
 function OpenPublicProperties(){
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
     var dot_info = document.getElementById("legend");
     dot_info.style.visibility = "visible";
     console.log(dot_info);
@@ -24,7 +25,7 @@ function OpenPublicProperties(){
     map.on("load", function() {
         addLayerWithZoom("Barbecue", cfLayer['Barbecue'],cfName['Barbecue'], cfColor["Barbecue"], 0, map, "#ffffff", 5, 1);
         addLayerWithZoom("Bicycle Rails", cfLayer["Bicycle Rails"], cfName["Bicycle Rails"], cfColor["Bicycle Rails"], 0 ,map,"#ffffff", 3, 1);
-        addLayerWithZoom("Information Pillar", cfLayer["Information Pillar"], cfName["Information Pillar"], cfColor["Information Pillar"], 0, map, "#ffffff", 5, 1);
+        addLayerWithZoom("Information Pillars", cfLayer["Information Pillars"], cfName["Information Pillars"], cfColor["Information Pillars"], 0, map, "#ffffff", 5, 1);
         addLayerWithZoom("Picnic setting", cfLayer["Picnic setting"], cfName["Picnic setting"], cfColor["Picnic setting"], 0, map, "#ffffff", 5 ,1);
         addLayerWithZoom("Drinking fountains", cfLayer["Drinking fountains"], cfName["Drinking fountains"],  cfColor["Drinking fountains"], 0, map, "#ffffff", 5 ,1);
         addLayerWithZoom("Hoop", cfLayer["Hoop"], cfName["Hoop"], cfColor["Hoop"], 0, map, "#ffffff", 3, 1);
@@ -41,7 +42,7 @@ function OpenPublicProperties(){
         layers.removeChild(layers.lastChild);
     }
 
-    let cutted_public_properties = ["Drinking fountains", "Information Pillar","Little bins", "Public toilets","Seats"];
+    let cutted_public_properties = ["Drinking fountains", "Information Pillars","Little bins", "Public toilets","Seats"];
 
     //Add barbeque and picnic area button, and show or hide the layer of barbecue and picnic
     var link = document.createElement('a');
@@ -101,7 +102,7 @@ function OpenPublicProperties(){
 
 
     setCorrespondingButton(cutted_public_properties, cfColor, "cf_menu", map, false);
-    let new_legend_list =  ["Barbecue","Picnic setting","Bicycle Rails","Hoop","Drinking fountains", "Information Pillar","Little bins", "Public toilets","Seats"]
+    let new_legend_list =  ["Barbecue","Picnic setting","Bicycle Rails","Drinking fountains", "Information Pillars","Little bins", "Public toilets","Seats"]
     loadLegend(new_legend_list, cfColor);
     open_direction(map);
 
@@ -115,7 +116,7 @@ function OpenPublicProperties(){
     map.on('click', "Picnic setting", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_DESC"] + '</p>' +
-            '<p> Other description: ' + e.features[0].properties['DESCRIPTION']+'</p>'
+            '<p> Description: ' + e.features[0].properties['DESCRIPTION']+'</p>'
     });
 
     map.on('click', "Public toilets", function(e){
@@ -140,5 +141,11 @@ function OpenPublicProperties(){
     map.on('click', "Hoop", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Location: ' + e.features[0].properties["LOCATION_DESC"] + '</p>'
+    });
+
+    let mouseMovingList = ["Drinking fountains","Picnic setting", "Public toilets", "Barbecue", "Bicycle Rails", "Hoop"];
+    map.on('mousemove', function(e) {
+        // Change the icon to a pointer icon when you mouse over a building
+        mouseMove(mouseMovingList, map);
     });
 }

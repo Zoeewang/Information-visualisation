@@ -1,4 +1,5 @@
 function openLandOfMarks(){
+    document.getElementById("fixedContainer2").style.visibility = "hidden";
     var dot_info = document.getElementById("legend");
     dot_info.style.visibility = "visible";
     console.log(dot_info);
@@ -53,7 +54,7 @@ function openLandOfMarks(){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Cafe/Restaurant Name: ' + e.features[0].properties["Trading na"] + '</p>' +
             '<p> Address: ' + e.features[0].properties['Street add']+'</p>' +
-            '<p> Seat type: ' + e.features[0].properties['Seating ty']+'</p>' +
+            '<p> Seat type: ' + e.features[0].properties['Seating ty'].substring(8)+'</p>' +
             '<p> Number of seats: ' + e.features[0].properties['Number of']+'</p>'
 
     });
@@ -61,15 +62,21 @@ function openLandOfMarks(){
     map.on('click', "Public memorials & sculptures", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Title: ' + e.features[0].properties["Title"] + '</p>' +
-            '<p> Subclass: ' + e.features[0].properties['subclass']+'</p>'
+            '<p> Category: ' + e.features[0].properties['subclass']+'</p>'
 
     });
 
     map.on('click',  "Convenient support services", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Name: ' + e.features[0].properties["Name"] + '</p>' +
-            '<p> Address 1: ' + e.features[0].properties['Address 1']+'</p>' +
-            '<p> Address 2: ' + e.features[0].properties['Address 2']+'</p>' +
+            '<p> Address: ' + e.features[0].properties['Address 2']+'</p>' +
             '<p> Phone number: ' + e.features[0].properties['Phone']+'</p>'
+    });
+    let mousemovingList = ["Land Marks & places of interest", "Cafes & restaurants", "Public memorials & sculptures",
+        "Convenient support services"];
+
+    map.on('mousemove', function(e) {
+        // Change the icon to a pointer icon when you mouse over a building
+        mouseMove(mousemovingList, map);
     });
 }
