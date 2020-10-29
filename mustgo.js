@@ -2,6 +2,9 @@ function startMap() {
     // this.visible=true
     document.getElementById("fixedContainer2").style.visibility = "hidden";
     // document.getElementById("fixedContainer").style.visibility = "hidden";
+    var dot_info = document.getElementById("legend");
+    dot_info.style.visibility = "hidden";
+    console.log(dot_info);
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
 

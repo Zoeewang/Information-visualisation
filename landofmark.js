@@ -1,4 +1,7 @@
 function openLandOfMarks(){
+    var dot_info = document.getElementById("legend");
+    dot_info.style.visibility = "visible";
+    console.log(dot_info);
     var map = new mapboxgl.Map({
         container: 'map',
         style:'mapbox://styles/zwwang4/ckgq8lq113eym19pampeeqwjp', // stylesheet location

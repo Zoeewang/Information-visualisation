@@ -1,4 +1,7 @@
 function OpenTransportLayers(){
+    var dot_info = document.getElementById("legend");
+    dot_info.style.visibility = "visible";
+    console.log(dot_info);
     document.getElementById("fixedContainer2").style.visibility = "hidden";
     clearInfoBox();
     var map = new mapboxgl.Map({

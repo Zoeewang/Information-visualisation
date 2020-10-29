@@ -1,4 +1,7 @@
 function openPlaygroundLayers(){
+    var dot_info = document.getElementById("legend");
+    dot_info.style.visibility = "visible";
+    console.log(dot_info);
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/zwwang4/ckgq6pjoq28t719qhnwjr8gyn', // stylesheet location
