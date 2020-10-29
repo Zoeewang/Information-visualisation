@@ -5,6 +5,15 @@ function loadMap() {
     var dot_info = document.getElementById("legend");
     dot_info.style.visibility = "hidden";
     console.log(dot_info);
+    // var img = document.createElement("img");
+    // img.src="./image/melbourne.jpg"
+    // img.style.width = "200px";
+    // img.style.marginLeft = "auto";
+    // img.style.marginRight = "auto";
+    // img.style.display = "block";
+    //
+    //
+    // document.getElementById("box11").appendChild(img);
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoiend3YW5nNCIsImEiOiJja2dwdW5rbmkwa25wMnJxaXZjZGl3aWJoIn0.cz7Disiu_jwNDozdcG98NQ';
 
