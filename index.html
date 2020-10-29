@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MelbAdvisor</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
     <link
@@ -16,18 +16,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 
-<body onload="startMap()">
+<body onload="loadMap()">
 <!--navbar-->
 <div class = "nav-team32">
     <nav class="navbar navbar-light bg-light border-bottom">
         <a class="navbar-brand" href="#">
-            <img src="./image/logo.png" width="70" height="70" class="d-inline-block align-top" alt="">
+            <img src="image/logo4.png" width="70" height="60" class="d-inline-block align-top" alt="" onclick="loadMap()">
         </a>
-        <ul class = "brandname" style="font-family: 'Lobster', cursive; font-weight:100; font-size: 30px">MelbAdvisor</ul>
+        <ul class = "brandname" style="font-family: 'Lobster', cursive; font-weight:100; font-size: 30px" onclick="startMap()">MelbAdvisor</ul>
         <ul class="nav-area">
 <!--            <li class="nav-link"  type="button" onclick="startMap()" style="font-size: 18px; color: #707074;">20 Must GO</li>-->
             <li class="nav-item">
-                <a class="nav-link" type="button" onclick="startMap()"><span>20 Must go</span></a>
+                <a class="nav-link" type="button" onclick="startMap()"><span>20 Must Go</span></a>
             </li>
             <li class="nav-item dropdown">
 
@@ -40,7 +40,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 onclick="openLandOfMarks()">
-                    Places of interest
+                    Places of Interest
                 </a>
                 <div id="poi_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </div>
@@ -49,7 +49,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                    onclick="OpenPublicProperties()">
-                    Living facilities
+                    Living Facilities
                 </a>
                 <div id="cf_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </div>
@@ -58,7 +58,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 onclick="openPlaygroundLayers()">
-                    Playgrounds & special areas
+                    Playgrounds & Special Areas
                 </a>
                 <div id="sa_menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </div>
@@ -77,12 +77,17 @@
 
 <div id="fixedContainer" style="visibility: visible">
     <h4 style="font-family: 'Source Serif Pro', serif;  font-size: 20px; text-align: center" >Information</h4>
+    <div id="welcome">
+        <h5 style="font-family: 'Source Serif Pro', serif;  font-size: 15px; text-align: center;"><i>"Do our best to help you enjoy your trip in the City of Melbourne."</i></h5>
+
+    </div>
+
 <!--    <button type="button" class="btn btn-light" style="position: center">👈 Pick a day</button>-->
     <div id="box">
 <!--    <canvas id="myChart" width="200" height="300"></canvas>-->
      </div>
     <div class="box11">
-        <img id="landmark_image" src="./image/flinders%20street%20station.jpg" style="width:200px; ">
+        <img id="landmark_image" src="./image/melbourne.jpg" style="width:200px; ">
         <!--        <p id="p1">hello</p>-->
     </div>
     <div id="dot_info"></div>
@@ -122,4 +127,5 @@
     <script src="public_properties.js"></script>
     <script src='playgrounds.js'></script>
     <script src="landofmark.js"></script>
+    <script src="start.js"></script>
 </html>

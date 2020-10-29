@@ -149,7 +149,7 @@ body { margin: 0; padding: 0; }
     /*padding-top: 10px;*/
     position: absolute;
     float:left;
-    padding-left: 130px;
+    padding-left: 100px;
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
 
@@ -257,4 +257,11 @@ body { margin: 0; padding: 0; }
 
 .dropdown-menu a{
     font-size: 15px !important;
+}
+
+#landmark_image{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
 }

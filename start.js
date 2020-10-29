@@ -1,4 +1,4 @@
-function startMap() {
+function loadMap() {
     // this.visible=true
     document.getElementById("fixedContainer2").style.visibility = "hidden";
     // document.getElementById("fixedContainer").style.visibility = "hidden";
@@ -16,7 +16,7 @@ function startMap() {
         center: {lat: -37.814, lng: 144.969}, // starting position [lng, lat]
         zoom: 14 // starting zoom
     });
-    clearInfoBox();
+
     var shrine_loc = {lat: -37.829906, lng: 144.973442}
     var arts_loc = {lat:-37.820060, lng:144.968138}
     var etihad_loc = {lat: -37.816327, lng:144.947463}
@@ -50,7 +50,7 @@ function startMap() {
     var shrine_popup = new mapboxgl.Popup({ offset: 15 })
         .setHTML('<h6><b>Shrine of Remembrance</b></h6>'+ '<p style="color:gray">War Memorial</p>' +
             '<p>An iconic landmark honouring the service of Australian men and women in war and peacekeeping. <br><br><b> Opening Hours</b> <br> All days : 10 am to 5 pm </p>'
-            );
+        );
     ;
     var arts_popup = new mapboxgl.Popup({ offset: 15 })
         .setHTML('<h6><b>Arts Centre Melbourne</b></h6>'+ '<p style="color:gray">Performing Arts Centre</p>' +
@@ -387,6 +387,11 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
+
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -437,6 +442,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -482,6 +491,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -526,6 +539,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -567,6 +584,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -610,6 +631,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -655,6 +680,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -698,6 +727,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -744,6 +777,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -787,6 +824,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -829,6 +870,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -874,6 +919,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -917,6 +966,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -959,6 +1012,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -1004,6 +1061,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -1046,6 +1107,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
@@ -1090,6 +1155,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -1133,6 +1202,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -1175,6 +1248,10 @@ function startMap() {
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
         }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
+        }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
         canvas.width = 200;
@@ -1216,6 +1293,10 @@ function startMap() {
         if (document.getElementById('thechart') != null){
             var element = document.getElementById('thechart');
             element.parentNode.removeChild(element);
+        }
+        if (document.getElementById("welcome") != null){
+            var welcome = document.getElementById("welcome");
+            welcome.remove();
         }
         var canvas = document.createElement('canvas');
         canvas.id = "barchart";
