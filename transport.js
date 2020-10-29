@@ -19,6 +19,22 @@ function OpenTransportLayers(){
 
     map.on("load", function() {
         //Tram
+        map.addLayer({
+            id: "Free Tram Zoom",
+            type: "fill",
+            'source-layer': 'free_tram_zone-7amjpk',
+            source:{
+                type: 'vector',
+                url:("mapbox://")+"zwwang4.39f3px85"
+            },
+            "paint":{"fill-color":"#bec23f",
+                "fill-opacity": 0.2,
+                "fill-outline-color": "#bec23f"
+            }
+        })
+        map.setLayoutProperty("Free Tram Zoom","visibility",'none');
+        addLineLayer("zwwang4.1zjq6567","free_tram_zone_boundary_line-dabmgp","#003300",map, 4);
+        map.setLayoutProperty("free_tram_zone_boundary_line-dabmgp", 'visibility','none');
         addLineLayer(transport_route_Layers['Tram'],transport_route_Name['Tram'],"#cccccc", map, 2.5);
         map.setLayoutProperty(transport_route_Name['Tram'], "visibility","none");
         addLineLayer(transport_MOC_route_layer['Tram'],transport_MOC_route_Name['Tram'],transportColor['Tram'],map, 2.5);
@@ -91,34 +107,32 @@ function OpenTransportLayers(){
         map.setLayoutProperty('Night bus', "visibility","none");
 
 
-        map.addLayer({
-            id: "Free Tram Zoom",
-            type: "fill",
-            'source-layer': 'free_tram_zone-7amjpk',
-            source:{
-                type: 'vector',
-                url:("mapbox://")+"zwwang4.39f3px85"
-            },
-            "paint":{"fill-color":"#bec23f",
-                "fill-opacity": 0.2,
-                "fill-outline-color": "#bec23f"
-            }
-        })
-        map.setLayoutProperty("Free Tram Zoom","visibility",'none');
-        addLineLayer("zwwang4.1zjq6567","free_tram_zone_boundary_line-dabmgp","#003300",map, 5);
-        map.setLayoutProperty("free_tram_zone_boundary_line-dabmgp", 'visibility','none');
-
     });
 
     map.on('mousemove', function(e) {
         // Change the icon to a pointer icon when you mouse over a building
         mouseMove(transports, map);
     });
-    //
+
     mouseClick(transports, map);
-    //
+
 
     loadLegend(transports, transportColor);
+    let legend = document.getElementById("legend");
+    let x = "Free Tram Zoom";
+    let color = "rgba(190, 194, 63, 0.7)";
+    let item = document.createElement('div');
+    let key = document.createElement('span');
+    key.className = 'legend-key';
+    key.style.backgroundColor = color;
+    let value = document.createElement('span');
+    value.innerHTML = x;
+    if(x==="Bicycle Rails"){
+        value.innerHTML = "Bicycle Rails & Hoops";
+    }
+    item.appendChild(key);
+    item.appendChild(value);
+    legend.appendChild(item);
 
     setCorrespondingTransportButton(transports, 'menu', map);
 

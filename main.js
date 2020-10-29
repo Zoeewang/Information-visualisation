@@ -48,12 +48,12 @@ let poiName = {"Cafes & restaurants":"cafe_restaurant_bistro_seats-bab3y3", "Con
 let poiColor = {"Cafes & restaurants":"#e6a026", "Convenient support services":"#1d95c4","Land Marks & places of interest":"#d66060", "Public memorials & sculptures":"#a1c851"};
 
 
-let convenience_facilities = ["Barbecue", "Bicycle Rails","Drinking fountains","Hoop", "Information Pillar","Picnic setting","Public toilets","Seats","Little bins"];
+let convenience_facilities = ["Barbecue", "Bicycle Rails","Drinking fountains","Hoop", "Information Pillars","Picnic setting","Public toilets","Seats","Little bins"];
 let cfLayer={"Barbecue":"zwwang4.3lg4xep6", "Bicycle Rails":"zwwang4.2oqn7jli","Drinking fountains":"zwwang4.clemipy3","Hoop":"zwwang4.b196630g",
-    "Information Pillar":"zwwang4.0v4u2916","Picnic setting":"zwwang4.3cdmpl2k","Public toilets":"zwwang4.3r82pcrj","Seats":"zwwang4.99fbrhc9","Little bins":"zwwang4.3k5d7av3"};
+    "Information Pillars":"zwwang4.0v4u2916","Picnic setting":"zwwang4.3cdmpl2k","Public toilets":"zwwang4.3r82pcrj","Seats":"zwwang4.99fbrhc9","Little bins":"zwwang4.3k5d7av3"};
 let cfName ={"Barbecue":"barbeque-cuezqy", "Bicycle Rails":"bicycle_rails-4l7cci","Drinking fountains":"drinking_fountains-8c61v0","Hoop":"Hoop-4hy87x",
-    "Information Pillar":"Information_Pillar-a2pns0","Picnic setting":"Picnic_setting-4y2oya","Public toilets":"public_toilets-19xbh5","Seats":"seat-64bqae","Little bins":"litter_bin-9872ti"};
-let cfColor = {"Barbecue":"#dc5757", "Bicycle Rails":"#8facd4","Drinking fountains":"#66beb5","Hoop":"#8facd4", "Information Pillar":"#77abc1","Picnic setting":"#ea943d","Public toilets":"#8d969b","Seats":"#e5b636","Little bins":"#8f8f8f"}
+    "Information Pillars":"Information_Pillar-a2pns0","Picnic setting":"Picnic_setting-4y2oya","Public toilets":"public_toilets-19xbh5","Seats":"seat-64bqae","Little bins":"litter_bin-9872ti"};
+let cfColor = {"Barbecue":"#dc5757", "Bicycle Rails":"#8facd4","Drinking fountains":"#66beb5","Hoop":"#8facd4", "Information Pillars":"#77abc1","Picnic setting":"#ea943d","Public toilets":"#8d969b","Seats":"#e5b636","Little bins":"#8f8f8f"}
 
 let special_areas = ["Dog walking zones", "Outdoor non-smoke zones", "Playgrounds"];
 let special_areas_Layer = {"Playgrounds":"zwwang4.2kzweoh4","Outdoor non-smoke zones":"zwwang4.0kcs10go","Dog walking zones":"zwwang4.2bbudk19"}
@@ -86,7 +86,13 @@ function addLayerWithZoom(transport,transport_layer, transport_name,transport_co
         },
         "paint":{"circle-color":transport_color,
             "circle-stroke-color": stroke_color,
-            "circle-radius": radius,
+            "circle-radius": {
+                'base': radius,
+                'stops': [
+                    [13, radius],
+                    [18, 30]
+                ]
+            },
             "circle-stroke-width": stroke_width}
     })
 }
@@ -138,12 +144,21 @@ function mouseMove(layers, map){
 function mouseClick(layers, map){
     var layer;
     for(layer of layers){
-        map.on('click', layer, function(e){
-            let div = document.getElementById('dot_info');
-            div.innerHTML = '<p> Route: ' + e.features[0].properties.ROUTEUSSP + '</p>' + '<p> Stop: ' +
-                e.features[0].properties.STOP_NAME+'</p>'
+        if(layer === "Sky bus"){
+            map.on('click', layer, function(e){
+                let div = document.getElementById('dot_info');
+                div.innerHTML = '<p> Stop: ' + e.features[0].properties.STOP_NAME+'</p>'
 
-        });
+            });
+        }else{
+            map.on('click', layer, function(e){
+                let div = document.getElementById('dot_info');
+                div.innerHTML = '<p> Route: ' + e.features[0].properties.ROUTEUSSP + '</p>' + '<p> Stop: ' +
+                    e.features[0].properties.STOP_NAME+'</p>'
+
+            });
+        }
+
     }
 }
 
@@ -248,6 +263,9 @@ function loadLegend(name_list, color_dict){
         key.style.borderRadius = "50%";
         let value = document.createElement('span');
         value.innerHTML = x;
+        if(x==="Bicycle Rails"){
+            value.innerHTML = "Bicycle Rails & Hoops";
+        }
         item.appendChild(key);
         item.appendChild(value);
         legend.appendChild(item);

@@ -37,5 +37,10 @@ function openPlaygroundLayers(){
         div.innerHTML = '<p> Name: ' + e.features[0].properties["name"] + '</p>'
     });
 
+    let mouseMovingList = ["Playgrounds", "Outdoor non-smoke zones"];
+    map.on('mousemove', function(e) {
+        // Change the icon to a pointer icon when you mouse over a building
+        mouseMove(mouseMovingList, map);
+    });
 
 }

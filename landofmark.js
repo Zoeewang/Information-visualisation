@@ -57,15 +57,21 @@ function openLandOfMarks(){
     map.on('click', "Public memorials & sculptures", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Title: ' + e.features[0].properties["Title"] + '</p>' +
-            '<p> Subclass: ' + e.features[0].properties['subclass']+'</p>'
+            '<p> Category: ' + e.features[0].properties['subclass']+'</p>'
 
     });
 
     map.on('click',  "Convenient support services", function(e){
         let div = document.getElementById('dot_info');
         div.innerHTML = '<p> Name: ' + e.features[0].properties["Name"] + '</p>' +
-            '<p> Address 1: ' + e.features[0].properties['Address 1']+'</p>' +
-            '<p> Address 2: ' + e.features[0].properties['Address 2']+'</p>' +
+            '<p> Address: ' + e.features[0].properties['Address 2']+'</p>' +
             '<p> Phone number: ' + e.features[0].properties['Phone']+'</p>'
+    });
+    let mousemovingList = ["Land Marks & places of interest", "Cafes & restaurants", "Public memorials & sculptures",
+        "Convenient support services"];
+
+    map.on('mousemove', function(e) {
+        // Change the icon to a pointer icon when you mouse over a building
+        mouseMove(mousemovingList, map);
     });
 }
