@@ -312,6 +312,7 @@ function clearInfoBox(){
     let pic = document.getElementById("landmark_image");
     let charts = document.getElementById("box");
     let dot_info = document.getElementById("dot_info");
+    let welcome_board = document.getElementById("welcome");
     while(dot_info.lastChild){
         dot_info.removeChild(dot_info.lastChild);
     }
@@ -319,6 +320,10 @@ function clearInfoBox(){
 
     while(charts.lastChild){
         charts.removeChild(charts.lastChild);
+    }
+
+    while(welcome_board.lastChild){
+        welcome_board.removeChild(welcome_board.lastChild);
     }
 }
 
